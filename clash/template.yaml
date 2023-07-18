@@ -1,0 +1,37 @@
+[custom]
+
+;🤖 ‍AI
+;🌐 全球
+
+custom_proxy_group=🛩️ NodeSelected`select`[]⚡️ Auto`[]DIRECT`.*
+custom_proxy_group=⚡️ Auto`url-test`.*`http://www.gstatic.com/generate_204`30,,50
+custom_proxy_group=👀 ForeignMedia`select`[]🛩️ NodeSelected`[]⚡️ Auto`[]🌐 GlobalDirect`.*
+custom_proxy_group=Ⓜ️ Microsoft`select`[]🌐 GlobalDirect`[]🛩️ NodeSelected`.*
+custom_proxy_group=🍏 Apple`select`[]🛩️ NodeSelected`[]🌐 GlobalDirect`.*
+custom_proxy_group=📮 Google`select`[]🛩️ NodeSelected`[]🌐 GlobalDirect`[]⚡️ Auto`.*
+custom_proxy_group=🌐 GlobalDirect`select`[]DIRECT`[]🛩️ NodeSelected`[]⚡️ Auto
+custom_proxy_group=🌱 Purification`select`[]REJECT`[]DIRECT
+custom_proxy_group=🤖 AI`select`[]DIRECT`.*
+custom_proxy_group=😮‍💨 Final`select`[]🛩️ NodeSelected`[]🌐 GlobalDirect`[]⚡️ Auto`.*
+
+ruleset=🤖 AI,https://raw.githubusercontent.com/Xie-Muxi/ProxyConfig/main/rule/AI.list
+ruleset=🛩️ NodeSelected,https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/LocalAreaNetwork.list
+ruleset=🛩️ NodeSelected,https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/UnBan.list
+ruleset=🌱 Purification,https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/BanAD.list
+ruleset=🌱 Purification,https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/BanProgramAD.list
+ruleset=📮 Google,https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Ruleset/GoogleFCM.list
+ruleset=🌐 GlobalDirect,https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/GoogleCN.list
+ruleset=🌐 GlobalDirect,https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Ruleset/SteamCN.list
+ruleset=Ⓜ️ Microsoft,https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Microsoft.list
+ruleset=🍏 Apple,https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Apple.list
+ruleset=👀 ForeignMedia,https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/ProxyMedia.list
+ruleset=🛩️ NodeSelected,https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/ProxyLite.list
+ruleset=🌐 GlobalDirect,https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/ChinaDomain.list
+ruleset=🌐 GlobalDirect,https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/ChinaCompanyIp.list
+;ruleset=🌐 GlobalDirect,[]GEOIP,LAN
+ruleset=🌐 GlobalDirect,[]GEOIP,CN
+ruleset=😮‍💨 Final,[]FINAL
+
+
+enable_rule_generator=true
+overwrite_original_rules=true
