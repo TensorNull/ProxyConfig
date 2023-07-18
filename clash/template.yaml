@@ -3,6 +3,8 @@
 ;🤖 ‍AI
 ;🎯 全球
 
+;filter: 
+
 custom_proxy_group=🛩️ NodeSelected`select`[]⚡️ Auto`[]DIRECT`.*
 custom_proxy_group=⚡️ Auto`url-test`.*`http://www.gstatic.com/generate_204`30,,50
 custom_proxy_group=👀 ForeignMedia`select`[]🛩️ NodeSelected`[]⚡️ Auto`[]🎯 GlobalDirect`.*
@@ -28,7 +30,7 @@ ruleset=👀 ForeignMedia,https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/mast
 ruleset=🛩️ NodeSelected,https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/ProxyLite.list
 ruleset=🎯 GlobalDirect,https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/ChinaDomain.list
 ruleset=🎯 GlobalDirect,https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/ChinaCompanyIp.list
-;ruleset=🎯 GlobalDirect,[]GEOIP,LAN
+ruleset=🎯 GlobalDirect,[]GEOIP,LAN
 ruleset=🎯 GlobalDirect,[]GEOIP,CN
 ruleset=😮‍💨 Final,[]FINAL
 
