@@ -1,5 +1,7 @@
-// 关于 OpenAI, ChatGPT 的
+//  OpenAI, ChatGPT 
 DOMAIN-SUFFIX,ai.com
+DOMAIN-SUFFIX,oaistatic.com
+DOMAIN-SUFFIX,oaiusercontent.com
 DOMAIN-SUFFIX,auth0.openai.com
 DOMAIN-SUFFIX,chat.openai.com
 DOMAIN-SUFFIX,chat.openai.com.cdn.cloudflare.net
@@ -19,19 +21,19 @@ DOMAIN,cdn.auth0.com
 DOMAIN,openaiapi-site.azureedge.net
 DOMAIN,challenges.cloudflare.com
 
-// 关于 Google Bard 的
+// Google Bard
 DOMAIN-SUFFIX,bard.google.com
 
-// 关于 Bing 的
+// Bing 
 DOMAIN-SUFFIX,bing.com
 
-// 关于 Pi 的
+// Pi
 DOMAIN-SUFFIX,heypi.com
 
-// 关于 Poe 的
+// Poe
 DOMAIN-SUFFIX,poe.com
 
-// 关于 Notion 的
+// Notion
 DOMAIN-SUFFIX,notion-static.com
 DOMAIN-SUFFIX,notion.com
 DOMAIN-SUFFIX,notion.new
