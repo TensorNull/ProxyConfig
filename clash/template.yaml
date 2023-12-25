@@ -1,6 +1,4 @@
 [custom]
-;设置分组标志位
-;🤖 ‍AI
 
 ;filter: 
 
@@ -16,7 +14,7 @@ custom_proxy_group=🌱 Purification`select`[]REJECT`[]DIRECT
 custom_proxy_group=🤖 AI`select`[]DIRECT`.*
 custom_proxy_group=😮‍💨 Final`select`[]🛩️ NodeSelected`[]🎯 Foreign`[]⚡️ Auto`.*
 
-ruleset=no-resolve,https://raw.githubusercontent.com/Xie-Muxi/ProxyConfig/main/rule/no-resolve.list
+ruleset=DIRECT,no-resolve,https://raw.githubusercontent.com/Xie-Muxi/ProxyConfig/main/rule/no-resolve.list
 ruleset=🤖 AI,https://raw.githubusercontent.com/Xie-Muxi/ProxyConfig/main/rule/AI.list
 ruleset=🎯 Foreign,https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/LocalAreaNetwork.list
 ruleset=🛩️ NodeSelected,https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/UnBan.list
