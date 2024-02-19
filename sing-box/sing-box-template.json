@@ -258,8 +258,7 @@
             "tag": "🇭🇰 Hong Kong",
             "type": "selector",
             "outbounds": [
-                "{all}",
-                "🛩️ NodeSelected"
+                "{all}"
             ],
             "filter": [
                 {
@@ -274,8 +273,7 @@
             "tag": "🇹🇼 Taiwan",
             "type": "selector",
             "outbounds": [
-                "{all}",
-                "🛩️ NodeSelected"
+                "{all}"
             ],
             "filter": [
                 {
@@ -290,8 +288,7 @@
             "tag": "🇸🇬 Singapore",
             "type": "selector",
             "outbounds": [
-                "{all}",
-                "🛩️ NodeSelected"
+                "{all}"
             ],
             "filter": [
                 {
@@ -306,8 +303,7 @@
             "tag": "🇯🇵 Japan",
             "type": "selector",
             "outbounds": [
-                "{all}",
-                "🛩️ NodeSelected"
+                "{all}"
             ],
             "filter": [
                 {
@@ -322,8 +318,7 @@
             "tag": "🇺🇸 America",
             "type": "selector",
             "outbounds": [
-                "{all}",
-                "🛩️ NodeSelected"
+                "{all}"
             ],
             "filter": [
                 {
@@ -338,8 +333,7 @@
             "tag": "✈️ Others",
             "type": "selector",
             "outbounds": [
-                "{all}",
-                "🛩️ NodeSelected"
+                "{all}"
             ],
             "filter": [
                 {
