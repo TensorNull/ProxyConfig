@@ -257,7 +257,7 @@
             ]
         },
         {
-            "tag": "🇹🇼 TaiWan",
+            "tag": "🇹🇼 Taiwan",
             "type": "selector",
             "outbounds": [
                 "{all}",
