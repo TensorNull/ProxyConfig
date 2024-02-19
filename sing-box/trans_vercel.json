@@ -6,10 +6,10 @@
     "experimental": {
         "clash_api": {
             "external_controller": "127.0.0.1:9090",
-            "external_ui_download_url": "",
-            "external_ui_download_detour": "",
             "external_ui": "ui",
             "secret": "",
+            "external_ui_download_url": "https://github.com/MetaCubeX/metacubexd/archive/gh-pages.zip",
+            "external_ui_download_detour": "🇭🇰 香港节点",
             "default_mode": "rule"
         },
         "cache_file": {
@@ -21,21 +21,17 @@
         "servers": [
             {
                 "tag": "proxyDns",
-                "address": "https://8.8.8.8/dns-query",
-                "detour": "🛩️ NodeSelected"
+                "address": "tls://8.8.8.8",
+                "detour": "proxy"
             },
             {
                 "tag": "localDns",
                 "address": "https://223.5.5.5/dns-query",
-                "detour": "Direct"
+                "detour": "direct"
             },
             {
-                "tag": "Block",
+                "tag": "block",
                 "address": "rcode://success"
-            },
-            {
-                "tag": "remote",
-                "address": "fakeip"
             }
         ],
         "rules": [
@@ -49,7 +45,7 @@
             },
             {
                 "rule_set": "geosite-category-ads-all",
-                "server": "Block"
+                "server": "block"
             },
             {
                 "outbound": "any",
@@ -61,7 +57,7 @@
                 "server": "localDns"
             },
             {
-                "clash_mode": "Direct",
+                "clash_mode": "direct",
                 "server": "localDns"
             },
             {
@@ -71,21 +67,8 @@
             {
                 "rule_set": "geosite-geolocation-!cn",
                 "server": "proxyDns"
-            },
-            {
-                "query_type": [
-                    "A",
-                    "AAAA"
-                ],
-                "server": "remote"
             }
         ],
-        "fakeip": {
-            "enabled": true,
-            "inet4_range": "198.18.0.0/15",
-            "inet6_range": "fc00::/18"
-        },
-        "independent_cache": true,
         "strategy": "prefer_ipv4"
     },
     "inbounds": [
@@ -111,16 +94,33 @@
             "type": "mixed",
             "listen": "127.0.0.1",
             "listen_port": 2080,
-            "sniff": true
+            "sniff": true,
+            "users": []
         }
     ],
     "outbounds": [
         {
-            "tag": "🛩️ NodeSelected",
+            "tag": "proxy",
             "type": "selector",
             "outbounds": [
-                "⚡️ Auto",
-                "Direct",
+                "auto",
+                "direct",
+                "剩余流量：924.38 GB",
+                "距离下次重置剩余：20 天",
+                "套餐到期：2024-04-10",
+                "【永久域名Tafog.com】",
+                "🇭🇰 Bronze-香港-BGP-01",
+                "🇭🇰 Bronze-香港-Lite-02",
+                "🇭🇰 Bronze-香港-HGC-03",
+                "🇭🇰 Bronze-香港-HGC-04",
+                "🇭🇰 Bronze-香港-BGP-05",
+                "🇰🇷 Bronze-韩国-Cloud-01",
+                "🇯🇵 Bronze-日本-onep-01",
+                "🇹🇼 Bronze-台湾-Hinet-01",
+                "🇸🇬 Bronze-新加坡-onep-01",
+                "🇺🇸 Bronze-美国-onep-01",
+                "🇺🇸 Bronze-美国-onep-02",
+                "🇺🇸 Bronze-美国-Los-03",
                 "🇭🇰 Silver-香港-HKG-01",
                 "🇭🇰 Silver-香港-HKG-02",
                 "🇭🇰 Silver-香港-BGP-03",
@@ -168,9 +168,286 @@
             ]
         },
         {
-            "tag": "⚡️ Auto",
+            "tag": "🤖 OpenAI",
+            "type": "selector",
+            "outbounds": [
+                "🇹🇼 台湾节点",
+                "🇸🇬 狮城节点",
+                "🇯🇵 日本节点",
+                "🇺🇸 美国节点",
+                "✈️ 其他节点"
+            ],
+            "default": "🇺🇸 美国节点"
+        },
+        {
+            "tag": "🌌 Google",
+            "type": "selector",
+            "outbounds": [
+                "🇭🇰 香港节点",
+                "🇹🇼 台湾节点",
+                "🇸🇬 狮城节点",
+                "🇯🇵 日本节点",
+                "🇺🇸 美国节点",
+                "✈️ 其他节点"
+            ]
+        },
+        {
+            "tag": "📟 Telegram",
+            "type": "selector",
+            "outbounds": [
+                "🇭🇰 香港节点",
+                "🇹🇼 台湾节点",
+                "🇸🇬 狮城节点",
+                "🇯🇵 日本节点",
+                "🇺🇸 美国节点",
+                "✈️ 其他节点"
+            ]
+        },
+        {
+            "tag": "🐦 Twitter",
+            "type": "selector",
+            "outbounds": [
+                "🇭🇰 香港节点",
+                "🇹🇼 台湾节点",
+                "🇸🇬 狮城节点",
+                "🇯🇵 日本节点",
+                "🇺🇸 美国节点",
+                "✈️ 其他节点"
+            ]
+        },
+        {
+            "tag": "👤 Facebook",
+            "type": "selector",
+            "outbounds": [
+                "🇭🇰 香港节点",
+                "🇹🇼 台湾节点",
+                "🇸🇬 狮城节点",
+                "🇯🇵 日本节点",
+                "🇺🇸 美国节点",
+                "✈️ 其他节点"
+            ]
+        },
+        {
+            "tag": "🛍️ Amazon",
+            "type": "selector",
+            "outbounds": [
+                "direct",
+                "🇭🇰 香港节点",
+                "🇹🇼 台湾节点",
+                "🇸🇬 狮城节点",
+                "🇯🇵 日本节点",
+                "🇺🇸 美国节点",
+                "✈️ 其他节点"
+            ]
+        },
+        {
+            "tag": "🍎 Apple",
+            "type": "selector",
+            "outbounds": [
+                "direct",
+                "🇭🇰 香港节点",
+                "🇹🇼 台湾节点",
+                "🇸🇬 狮城节点",
+                "🇯🇵 日本节点",
+                "🇺🇸 美国节点",
+                "✈️ 其他节点"
+            ]
+        },
+        {
+            "tag": "🧩 Microsoft",
+            "type": "selector",
+            "outbounds": [
+                "direct",
+                "🇭🇰 香港节点",
+                "🇹🇼 台湾节点",
+                "🇸🇬 狮城节点",
+                "🇯🇵 日本节点",
+                "🇺🇸 美国节点",
+                "✈️ 其他节点"
+            ]
+        },
+        {
+            "tag": "🎮 Game",
+            "type": "selector",
+            "outbounds": [
+                "direct",
+                "🇭🇰 香港节点",
+                "🇹🇼 台湾节点",
+                "🇸🇬 狮城节点",
+                "🇯🇵 日本节点",
+                "🇺🇸 美国节点",
+                "✈️ 其他节点"
+            ]
+        },
+        {
+            "tag": "📺 Bilibili",
+            "type": "selector",
+            "outbounds": [
+                "direct",
+                "🇭🇰 香港节点",
+                "🇹🇼 台湾节点"
+            ]
+        },
+        {
+            "tag": "🎬 MediaVideo",
+            "type": "selector",
+            "outbounds": [
+                "🇭🇰 香港节点",
+                "🇹🇼 台湾节点",
+                "🇸🇬 狮城节点",
+                "🇯🇵 日本节点",
+                "🇺🇸 美国节点",
+                "✈️ 其他节点"
+            ]
+        },
+        {
+            "tag": "🌏 !cn",
+            "type": "selector",
+            "outbounds": [
+                "🇭🇰 香港节点",
+                "🇹🇼 台湾节点",
+                "🇸🇬 狮城节点",
+                "🇯🇵 日本节点",
+                "🇺🇸 美国节点",
+                "✈️ 其他节点",
+                "direct"
+            ]
+        },
+        {
+            "tag": "🇭🇰 香港节点",
+            "type": "selector",
+            "outbounds": [
+                "🇭🇰 Bronze-香港-BGP-01",
+                "🇭🇰 Bronze-香港-Lite-02",
+                "🇭🇰 Bronze-香港-HGC-03",
+                "🇭🇰 Bronze-香港-HGC-04",
+                "🇭🇰 Bronze-香港-BGP-05",
+                "🇭🇰 Silver-香港-HKG-01",
+                "🇭🇰 Silver-香港-HKG-02",
+                "🇭🇰 Silver-香港-BGP-03",
+                "🇭🇰 Silver-香港-LMT-04",
+                "🇭🇰 Silver-香港-BGPZ-05",
+                "🇭🇰 Gold-香港-BGP-01",
+                "🇭🇰 Gold-香港-BGP-02",
+                "🇭🇰 Gold-香港-BN-03",
+                "🇭🇰 Gold-香港-BN-04",
+                "🇭🇰 Gold-香港-Pro-05",
+                "🇭🇰 Gold-香港-Pro-06",
+                "🇭🇰 Gold-香港-HEHIK-07",
+                "🇭🇰 Gold-香港-HEHIK-08",
+                "proxy"
+            ]
+        },
+        {
+            "tag": "🇹🇼 台湾节点",
+            "type": "selector",
+            "outbounds": [
+                "🇹🇼 Bronze-台湾-Hinet-01",
+                "🇹🇼 Silver-台湾-商宽-01",
+                "🇹🇼 Gold-台湾-Hinet-01",
+                "proxy"
+            ]
+        },
+        {
+            "tag": "🇸🇬 狮城节点",
+            "type": "selector",
+            "outbounds": [
+                "🇸🇬 Bronze-新加坡-onep-01",
+                "🇸🇬 Silver-新加坡-01",
+                "🇸🇬 Silver-新加坡-02",
+                "🇸🇬 Gold-新加坡-01",
+                "🇸🇬 Gold-新加坡-02",
+                "proxy"
+            ]
+        },
+        {
+            "tag": "🇯🇵 日本节点",
+            "type": "selector",
+            "outbounds": [
+                "🇯🇵 Bronze-日本-onep-01",
+                "🇯🇵 Silver-日本-商宽-01",
+                "🇯🇵 Silver-日本-商宽-02",
+                "🇯🇵 Gold-日本-家宽-01",
+                "proxy"
+            ]
+        },
+        {
+            "tag": "🇺🇸 美国节点",
+            "type": "selector",
+            "outbounds": [
+                "🇺🇸 Bronze-美国-onep-01",
+                "🇺🇸 Bronze-美国-onep-02",
+                "🇺🇸 Bronze-美国-Los-03",
+                "🇺🇸 Silver-美国-Host-01",
+                "🇺🇸 Silver-美国-BGP-02",
+                "🇺🇸 Silver-美国-CN2-03",
+                "🇺🇸 Silver-美国-Vegas-04",
+                "🇺🇸 Gold-美国-Gost-01",
+                "🇺🇸 Gold-美国-Cn2-02",
+                "🇺🇸 Gold-美国-原生-03",
+                "🇺🇸 Gold-美国-原生-04",
+                "🇺🇸 Gold-美国-Vegas-05",
+                "proxy"
+            ]
+        },
+        {
+            "tag": "✈️ 其他节点",
+            "type": "selector",
+            "outbounds": [
+                "【永久域名Tafog.com】",
+                "🇰🇷 Bronze-韩国-Cloud-01",
+                "🇰🇷 Silver-韩国-商宽-01",
+                "🇹🇭 Silver-泰国-商宽-01",
+                "🇲🇾 Silver-马来西亚-01",
+                "🇰🇷 Gold-韩国-KR-01",
+                "🇮🇳 Gold-印度-Ind-01",
+                "🇻🇳 Gold-越南-Vie-01",
+                "🇹🇭 Gold-泰国-Tha-01",
+                "🇬🇧 Gold-英国-Gbr-01",
+                "🇩🇪 Gold-德国-Ger-01",
+                "🇷🇺 Gold-俄罗斯-RUM-01",
+                "🇲🇾 Gold-马来西亚-01",
+                "🇨🇦 Gold-加拿大-ProCA",
+                "🇹🇷 Gold-土耳其-Tr-01",
+                "proxy"
+            ]
+        },
+        {
+            "tag": "🌏 cn",
+            "type": "selector",
+            "outbounds": [
+                "direct",
+                "proxy"
+            ]
+        },
+        {
+            "tag": "🛑 AdBlock",
+            "type": "selector",
+            "outbounds": [
+                "block",
+                "direct"
+            ]
+        },
+        {
+            "tag": "auto",
             "type": "urltest",
             "outbounds": [
+                "剩余流量：924.38 GB",
+                "距离下次重置剩余：20 天",
+                "套餐到期：2024-04-10",
+                "【永久域名Tafog.com】",
+                "🇭🇰 Bronze-香港-BGP-01",
+                "🇭🇰 Bronze-香港-Lite-02",
+                "🇭🇰 Bronze-香港-HGC-03",
+                "🇭🇰 Bronze-香港-HGC-04",
+                "🇭🇰 Bronze-香港-BGP-05",
+                "🇰🇷 Bronze-韩国-Cloud-01",
+                "🇯🇵 Bronze-日本-onep-01",
+                "🇹🇼 Bronze-台湾-Hinet-01",
+                "🇸🇬 Bronze-新加坡-onep-01",
+                "🇺🇸 Bronze-美国-onep-01",
+                "🇺🇸 Bronze-美国-onep-02",
+                "🇺🇸 Bronze-美国-Los-03",
                 "🇭🇰 Silver-香港-HKG-01",
                 "🇭🇰 Silver-香港-HKG-02",
                 "🇭🇰 Silver-香港-BGP-03",
@@ -221,252 +498,8 @@
             "tolerance": 50
         },
         {
-            "tag": "👀 ForeignMedia",
-            "type": "selector",
-            "outbounds": [
-                "Direct",
-                "🇭🇰 Hong Kong",
-                "🇹🇼 Taiwan",
-                "🇸🇬 Singapore",
-                "🇺🇸 America",
-                "🇯🇵 Japan",
-                "✈️ Others"
-            ],
-            "default": "🇭🇰 Hong Kong"
-        },
-        {
-            "tag": "🍎 Apple",
-            "type": "selector",
-            "outbounds": [
-                "Direct",
-                "🇭🇰 Hong Kong",
-                "🇹🇼 Taiwan",
-                "🇸🇬 Singapore",
-                "🇺🇸 America",
-                "🇯🇵 Japan",
-                "✈️ Others"
-            ],
-            "default": "🇭🇰 Hong Kong"
-        },
-        {
-            "tag": "Ⓜ️ Microsoft",
-            "type": "selector",
-            "outbounds": [
-                "Direct",
-                "🇭🇰 Hong Kong",
-                "🇹🇼 Taiwan",
-                "🇸🇬 Singapore",
-                "🇺🇸 America",
-                "🇯🇵 Japan",
-                "✈️ Others"
-            ],
-            "default": "🇭🇰 Hong Kong"
-        },
-        {
-            "tag": "🌐 Google",
-            "type": "selector",
-            "outbounds": [
-                "Direct",
-                "🇭🇰 Hong Kong",
-                "🇹🇼 Taiwan",
-                "🇸🇬 Singapore",
-                "🇺🇸 America",
-                "🇯🇵 Japan",
-                "✈️ Others"
-            ],
-            "default": "🇭🇰 Hong Kong"
-        },
-        {
-            "tag": "🎯 Foreign",
-            "type": "selector",
-            "outbounds": [
-                "Direct",
-                "🇭🇰 Hong Kong",
-                "🇹🇼 Taiwan",
-                "🇸🇬 Singapore",
-                "🇺🇸 America",
-                "🇯🇵 Japan",
-                "✈️ Others"
-            ],
-            "default": "🇭🇰 Hong Kong"
-        },
-        {
-            "tag": "🇨🇳 China",
-            "type": "selector",
-            "outbounds": [
-                "Direct",
-                "🛩️ NodeSelected"
-            ]
-        },
-        {
-            "tag": "🌱 Purification",
-            "type": "selector",
-            "outbounds": [
-                "Block",
-                "Direct"
-            ]
-        },
-        {
-            "tag": "🤖 AI",
-            "type": "selector",
-            "outbounds": [
-                "Direct",
-                "🇭🇰 Hong Kong",
-                "🇹🇼 Taiwan",
-                "🇸🇬 Singapore",
-                "🇺🇸 America",
-                "🇯🇵 Japan",
-                "✈️ Others"
-            ],
-            "default": "🇺🇸 America"
-        },
-        {
-            "tag": "😮‍💨 Final",
-            "type": "selector",
-            "outbounds": [
-                "Direct",
-                "⚡️ Auto",
-                "🇭🇰 Silver-香港-HKG-01",
-                "🇭🇰 Silver-香港-HKG-02",
-                "🇭🇰 Silver-香港-BGP-03",
-                "🇭🇰 Silver-香港-LMT-04",
-                "🇭🇰 Silver-香港-BGPZ-05",
-                "🇰🇷 Silver-韩国-商宽-01",
-                "🇹🇼 Silver-台湾-商宽-01",
-                "🇺🇸 Silver-美国-Host-01",
-                "🇺🇸 Silver-美国-BGP-02",
-                "🇺🇸 Silver-美国-CN2-03",
-                "🇺🇸 Silver-美国-Vegas-04",
-                "🇹🇭 Silver-泰国-商宽-01",
-                "🇲🇾 Silver-马来西亚-01",
-                "🇯🇵 Silver-日本-商宽-01",
-                "🇯🇵 Silver-日本-商宽-02",
-                "🇸🇬 Silver-新加坡-01",
-                "🇸🇬 Silver-新加坡-02",
-                "🇯🇵 Gold-日本-家宽-01",
-                "🇭🇰 Gold-香港-BGP-01",
-                "🇭🇰 Gold-香港-BGP-02",
-                "🇭🇰 Gold-香港-BN-03",
-                "🇭🇰 Gold-香港-BN-04",
-                "🇭🇰 Gold-香港-Pro-05",
-                "🇭🇰 Gold-香港-Pro-06",
-                "🇭🇰 Gold-香港-HEHIK-07",
-                "🇭🇰 Gold-香港-HEHIK-08",
-                "🇺🇸 Gold-美国-Gost-01",
-                "🇺🇸 Gold-美国-Cn2-02",
-                "🇺🇸 Gold-美国-原生-03",
-                "🇺🇸 Gold-美国-原生-04",
-                "🇺🇸 Gold-美国-Vegas-05",
-                "🇹🇼 Gold-台湾-Hinet-01",
-                "🇸🇬 Gold-新加坡-01",
-                "🇸🇬 Gold-新加坡-02",
-                "🇰🇷 Gold-韩国-KR-01",
-                "🇮🇳 Gold-印度-Ind-01",
-                "🇻🇳 Gold-越南-Vie-01",
-                "🇹🇭 Gold-泰国-Tha-01",
-                "🇬🇧 Gold-英国-Gbr-01",
-                "🇩🇪 Gold-德国-Ger-01",
-                "🇷🇺 Gold-俄罗斯-RUM-01",
-                "🇲🇾 Gold-马来西亚-01",
-                "🇨🇦 Gold-加拿大-ProCA",
-                "🇹🇷 Gold-土耳其-Tr-01"
-            ],
-            "default": "Direct"
-        },
-        {
-            "tag": "🇭🇰 Hong Kong",
-            "type": "selector",
-            "outbounds": [
-                "🇭🇰 Silver-香港-HKG-01",
-                "🇭🇰 Silver-香港-HKG-02",
-                "🇭🇰 Silver-香港-BGP-03",
-                "🇭🇰 Silver-香港-LMT-04",
-                "🇭🇰 Silver-香港-BGPZ-05",
-                "🇭🇰 Gold-香港-BGP-01",
-                "🇭🇰 Gold-香港-BGP-02",
-                "🇭🇰 Gold-香港-BN-03",
-                "🇭🇰 Gold-香港-BN-04",
-                "🇭🇰 Gold-香港-Pro-05",
-                "🇭🇰 Gold-香港-Pro-06",
-                "🇭🇰 Gold-香港-HEHIK-07",
-                "🇭🇰 Gold-香港-HEHIK-08",
-                "⚡️ Auto",
-                "🛩️ NodeSelected"
-            ]
-        },
-        {
-            "tag": "🇹🇼 Taiwan",
-            "type": "selector",
-            "outbounds": [
-                "🇹🇼 Silver-台湾-商宽-01",
-                "🇹🇼 Gold-台湾-Hinet-01",
-                "⚡️ Auto",
-                "🛩️ NodeSelected"
-            ]
-        },
-        {
-            "tag": "🇸🇬 Singapore",
-            "type": "selector",
-            "outbounds": [
-                "🇸🇬 Silver-新加坡-01",
-                "🇸🇬 Silver-新加坡-02",
-                "🇸🇬 Gold-新加坡-01",
-                "🇸🇬 Gold-新加坡-02",
-                "⚡️ Auto",
-                "🛩️ NodeSelected"
-            ]
-        },
-        {
-            "tag": "🇯🇵 Japan",
-            "type": "selector",
-            "outbounds": [
-                "🇯🇵 Silver-日本-商宽-01",
-                "🇯🇵 Silver-日本-商宽-02",
-                "🇯🇵 Gold-日本-家宽-01",
-                "⚡️ Auto",
-                "🛩️ NodeSelected"
-            ]
-        },
-        {
-            "tag": "🇺🇸 America",
-            "type": "selector",
-            "outbounds": [
-                "🇺🇸 Silver-美国-Host-01",
-                "🇺🇸 Silver-美国-BGP-02",
-                "🇺🇸 Silver-美国-CN2-03",
-                "🇺🇸 Silver-美国-Vegas-04",
-                "🇺🇸 Gold-美国-Gost-01",
-                "🇺🇸 Gold-美国-Cn2-02",
-                "🇺🇸 Gold-美国-原生-03",
-                "🇺🇸 Gold-美国-原生-04",
-                "🇺🇸 Gold-美国-Vegas-05",
-                "⚡️ Auto",
-                "🛩️ NodeSelected"
-            ]
-        },
-        {
-            "tag": "✈️ Others",
-            "type": "selector",
-            "outbounds": [
-                "🇹🇭 Silver-泰国-商宽-01",
-                "🇲🇾 Silver-马来西亚-01",
-                "🇰🇷 Gold-韩国-KR-01",
-                "🇮🇳 Gold-印度-Ind-01",
-                "🇻🇳 Gold-越南-Vie-01",
-                "🇹🇭 Gold-泰国-Tha-01",
-                "🇬🇧 Gold-英国-Gbr-01",
-                "🇩🇪 Gold-德国-Ger-01",
-                "🇷🇺 Gold-俄罗斯-RUM-01",
-                "🇲🇾 Gold-马来西亚-01",
-                "🇨🇦 Gold-加拿大-ProCA",
-                "🇹🇷 Gold-土耳其-Tr-01",
-                "⚡️ Auto",
-                "🛩️ NodeSelected"
-            ]
-        },
-        {
             "type": "direct",
-            "tag": "Direct"
+            "tag": "direct"
         },
         {
             "type": "dns",
@@ -474,7 +507,199 @@
         },
         {
             "type": "block",
-            "tag": "Block"
+            "tag": "block"
+        },
+        {
+            "tag": "剩余流量：924.38 GB",
+            "type": "trojan",
+            "server": "zz.xgzl.viptap-tcb-zz.cc",
+            "server_port": 50069,
+            "password": "39f2a2cd-5469-428b-ab9c-6395aebdfe6e",
+            "tls": {
+                "enabled": true,
+                "insecure": false,
+                "server_name": "ld.xgzl02.yuiuingkig.icu"
+            }
+        },
+        {
+            "tag": "距离下次重置剩余：20 天",
+            "type": "trojan",
+            "server": "zz.xgzl.viptap-tcb-zz.cc",
+            "server_port": 50069,
+            "password": "39f2a2cd-5469-428b-ab9c-6395aebdfe6e",
+            "tls": {
+                "enabled": true,
+                "insecure": false,
+                "server_name": "ld.xgzl02.yuiuingkig.icu"
+            }
+        },
+        {
+            "tag": "套餐到期：2024-04-10",
+            "type": "trojan",
+            "server": "zz.xgzl.viptap-tcb-zz.cc",
+            "server_port": 50069,
+            "password": "39f2a2cd-5469-428b-ab9c-6395aebdfe6e",
+            "tls": {
+                "enabled": true,
+                "insecure": false,
+                "server_name": "ld.xgzl02.yuiuingkig.icu"
+            }
+        },
+        {
+            "tag": "【永久域名Tafog.com】",
+            "type": "trojan",
+            "server": "zz.xgzl.viptap-tcb-zz.cc",
+            "server_port": 50069,
+            "password": "39f2a2cd-5469-428b-ab9c-6395aebdfe6e",
+            "tls": {
+                "enabled": true,
+                "insecure": false,
+                "server_name": "ld.xgzl02.yuiuingkig.icu"
+            }
+        },
+        {
+            "tag": "🇭🇰 Bronze-香港-BGP-01",
+            "type": "trojan",
+            "server": "zz.xg01.viptap-tcb-zz.cc",
+            "server_port": 40001,
+            "password": "39f2a2cd-5469-428b-ab9c-6395aebdfe6e",
+            "tls": {
+                "enabled": true,
+                "insecure": false,
+                "server_name": "ld.xgg01.yuiuingkig.icu"
+            }
+        },
+        {
+            "tag": "🇭🇰 Bronze-香港-Lite-02",
+            "type": "trojan",
+            "server": "zz.xgzl.viptap-tcb-zz.cc",
+            "server_port": 50069,
+            "password": "39f2a2cd-5469-428b-ab9c-6395aebdfe6e",
+            "tls": {
+                "enabled": true,
+                "insecure": false,
+                "server_name": "ld.xgzl02.yuiuingkig.icu"
+            }
+        },
+        {
+            "tag": "🇭🇰 Bronze-香港-HGC-03",
+            "type": "trojan",
+            "server": "zz.xgb.viptap-tcb-zz.cc",
+            "server_port": 40024,
+            "password": "39f2a2cd-5469-428b-ab9c-6395aebdfe6e",
+            "tls": {
+                "enabled": true,
+                "insecure": false,
+                "server_name": "ld.xghk03.yuiuingkig.icu"
+            }
+        },
+        {
+            "tag": "🇭🇰 Bronze-香港-HGC-04",
+            "type": "trojan",
+            "server": "zz.xgb.viptap-tcb-zz.cc",
+            "server_port": 40025,
+            "password": "39f2a2cd-5469-428b-ab9c-6395aebdfe6e",
+            "tls": {
+                "enabled": true,
+                "insecure": false,
+                "server_name": "ld.xghk03.yuiuingkig.icu"
+            }
+        },
+        {
+            "tag": "🇭🇰 Bronze-香港-BGP-05",
+            "type": "trojan",
+            "server": "zz.xgys.viptap-tcb-zz.cc",
+            "server_port": 40052,
+            "password": "39f2a2cd-5469-428b-ab9c-6395aebdfe6e",
+            "tls": {
+                "enabled": true,
+                "insecure": false,
+                "server_name": "ld.xgys01.yuiuingkig.icu"
+            }
+        },
+        {
+            "tag": "🇰🇷 Bronze-韩国-Cloud-01",
+            "type": "trojan",
+            "server": "zz.hg01.viptap-tcb-zz.cc",
+            "server_port": 40021,
+            "password": "39f2a2cd-5469-428b-ab9c-6395aebdfe6e",
+            "tls": {
+                "enabled": true,
+                "insecure": false,
+                "server_name": "ld.hg01.yuiuingkig.icu"
+            }
+        },
+        {
+            "tag": "🇯🇵 Bronze-日本-onep-01",
+            "type": "trojan",
+            "server": "zz.jp01.viptap-tcb-zz.cc",
+            "server_port": 40014,
+            "password": "39f2a2cd-5469-428b-ab9c-6395aebdfe6e",
+            "tls": {
+                "enabled": true,
+                "insecure": false,
+                "server_name": "ld.jp01.yuiuingkig.icu"
+            }
+        },
+        {
+            "tag": "🇹🇼 Bronze-台湾-Hinet-01",
+            "type": "trojan",
+            "server": "zz.tw01.viptap-tcb-zz.cc",
+            "server_port": 40036,
+            "password": "39f2a2cd-5469-428b-ab9c-6395aebdfe6e",
+            "tls": {
+                "enabled": true,
+                "insecure": false,
+                "server_name": "ld.tw01.yuiuingkig.icu"
+            }
+        },
+        {
+            "tag": "🇸🇬 Bronze-新加坡-onep-01",
+            "type": "trojan",
+            "server": "zz.xinjp01.viptap-tcb-zz.cc",
+            "server_port": 40013,
+            "password": "39f2a2cd-5469-428b-ab9c-6395aebdfe6e",
+            "tls": {
+                "enabled": true,
+                "insecure": false,
+                "server_name": "ld.xinjp01.yuiuingkig.icu"
+            }
+        },
+        {
+            "tag": "🇺🇸 Bronze-美国-onep-01",
+            "type": "trojan",
+            "server": "zz.mgxyt.viptap-tcb-zz.cc",
+            "server_port": 40005,
+            "password": "39f2a2cd-5469-428b-ab9c-6395aebdfe6e",
+            "tls": {
+                "enabled": true,
+                "insecure": false,
+                "server_name": "ld.mgxyt.yuiuingkig.icu"
+            }
+        },
+        {
+            "tag": "🇺🇸 Bronze-美国-onep-02",
+            "type": "trojan",
+            "server": "zz.mgxyt.viptap-tcb-zz.cc",
+            "server_port": 40006,
+            "password": "39f2a2cd-5469-428b-ab9c-6395aebdfe6e",
+            "tls": {
+                "enabled": true,
+                "insecure": false,
+                "server_name": "ld.mgxyt.yuiuingkig.icu"
+            }
+        },
+        {
+            "tag": "🇺🇸 Bronze-美国-Los-03",
+            "type": "trojan",
+            "server": "zz.usa02.viptap-tcb-zz.cc",
+            "server_port": 40044,
+            "password": "39f2a2cd-5469-428b-ab9c-6395aebdfe6e",
+            "tls": {
+                "enabled": true,
+                "insecure": false,
+                "server_name": "ld.meiguo02.yuiuingkig.icu"
+            }
         },
         {
             "tag": "🇭🇰 Silver-香港-HKG-01",
@@ -484,7 +709,7 @@
             "password": "39f2a2cd-5469-428b-ab9c-6395aebdfe6e",
             "tls": {
                 "enabled": true,
-                "insecure": true,
+                "insecure": false,
                 "server_name": "ld.hkgneko.yuiuingkig.icu"
             }
         },
@@ -496,7 +721,7 @@
             "password": "39f2a2cd-5469-428b-ab9c-6395aebdfe6e",
             "tls": {
                 "enabled": true,
-                "insecure": true,
+                "insecure": false,
                 "server_name": "ld.hkgneko.yuiuingkig.icu"
             }
         },
@@ -508,7 +733,7 @@
             "password": "39f2a2cd-5469-428b-ab9c-6395aebdfe6e",
             "tls": {
                 "enabled": true,
-                "insecure": true,
+                "insecure": false,
                 "server_name": "ld.2heix.yuiuingkig.icu"
             }
         },
@@ -520,7 +745,7 @@
             "password": "39f2a2cd-5469-428b-ab9c-6395aebdfe6e",
             "tls": {
                 "enabled": true,
-                "insecure": true,
+                "insecure": false,
                 "server_name": "ld.2heix.yuiuingkig.icu"
             }
         },
@@ -532,7 +757,7 @@
             "password": "39f2a2cd-5469-428b-ab9c-6395aebdfe6e",
             "tls": {
                 "enabled": true,
-                "insecure": true,
+                "insecure": false,
                 "server_name": "ld.xgbig.yuiuingkig.icu"
             }
         },
@@ -544,7 +769,7 @@
             "password": "39f2a2cd-5469-428b-ab9c-6395aebdfe6e",
             "tls": {
                 "enabled": true,
-                "insecure": true,
+                "insecure": false,
                 "server_name": "ld.hg01.yuiuingkig.icu"
             }
         },
@@ -556,7 +781,7 @@
             "password": "39f2a2cd-5469-428b-ab9c-6395aebdfe6e",
             "tls": {
                 "enabled": true,
-                "insecure": true,
+                "insecure": false,
                 "server_name": "ld.tw01.yuiuingkig.icu"
             }
         },
@@ -568,7 +793,7 @@
             "password": "39f2a2cd-5469-428b-ab9c-6395aebdfe6e",
             "tls": {
                 "enabled": true,
-                "insecure": true,
+                "insecure": false,
                 "server_name": "ld.usa01.yuiuingkig.icu"
             }
         },
@@ -580,7 +805,7 @@
             "password": "39f2a2cd-5469-428b-ab9c-6395aebdfe6e",
             "tls": {
                 "enabled": true,
-                "insecure": true,
+                "insecure": false,
                 "server_name": "ld.meiguo02.yuiuingkig.icu"
             }
         },
@@ -592,7 +817,7 @@
             "password": "39f2a2cd-5469-428b-ab9c-6395aebdfe6e",
             "tls": {
                 "enabled": true,
-                "insecure": true,
+                "insecure": false,
                 "server_name": "ld.mglsj.yuiuingkig.icu"
             }
         },
@@ -604,7 +829,7 @@
             "password": "39f2a2cd-5469-428b-ab9c-6395aebdfe6e",
             "tls": {
                 "enabled": true,
-                "insecure": true,
+                "insecure": false,
                 "server_name": "ld.vegas.yuiuingkig.icu"
             }
         },
@@ -616,7 +841,7 @@
             "password": "39f2a2cd-5469-428b-ab9c-6395aebdfe6e",
             "tls": {
                 "enabled": true,
-                "insecure": true,
+                "insecure": false,
                 "server_name": "ld.tgcloud.yuiuingkig.icu"
             }
         },
@@ -624,11 +849,11 @@
             "tag": "🇲🇾 Silver-马来西亚-01",
             "type": "trojan",
             "server": "zz.mlxy-1.viptap-tcb-zz.cc",
-            "server_port": 50116,
+            "server_port": 50117,
             "password": "39f2a2cd-5469-428b-ab9c-6395aebdfe6e",
             "tls": {
                 "enabled": true,
-                "insecure": true,
+                "insecure": false,
                 "server_name": "ld.mlxy-cn.yuiuingkig.icu"
             }
         },
@@ -640,7 +865,7 @@
             "password": "39f2a2cd-5469-428b-ab9c-6395aebdfe6e",
             "tls": {
                 "enabled": true,
-                "insecure": true,
+                "insecure": false,
                 "server_name": "ld.jp01.yuiuingkig.icu"
             }
         },
@@ -652,7 +877,7 @@
             "password": "39f2a2cd-5469-428b-ab9c-6395aebdfe6e",
             "tls": {
                 "enabled": true,
-                "insecure": true,
+                "insecure": false,
                 "server_name": "ld.rbv2.yuiuingkig.icu"
             }
         },
@@ -664,7 +889,7 @@
             "password": "39f2a2cd-5469-428b-ab9c-6395aebdfe6e",
             "tls": {
                 "enabled": true,
-                "insecure": true,
+                "insecure": false,
                 "server_name": "ld.xinjp01.yuiuingkig.icu"
             }
         },
@@ -676,7 +901,7 @@
             "password": "39f2a2cd-5469-428b-ab9c-6395aebdfe6e",
             "tls": {
                 "enabled": true,
-                "insecure": true,
+                "insecure": false,
                 "server_name": "ld.xjpsghkg.yuiuingkig.icu"
             }
         },
@@ -688,7 +913,7 @@
             "password": "39f2a2cd-5469-428b-ab9c-6395aebdfe6e",
             "tls": {
                 "enabled": true,
-                "insecure": true,
+                "insecure": false,
                 "server_name": "ld.rbv2.yuiuingkig.icu"
             }
         },
@@ -700,7 +925,7 @@
             "password": "39f2a2cd-5469-428b-ab9c-6395aebdfe6e",
             "tls": {
                 "enabled": true,
-                "insecure": true,
+                "insecure": false,
                 "server_name": "ld.3lmet.yuiuingkig.icu"
             }
         },
@@ -712,7 +937,7 @@
             "password": "39f2a2cd-5469-428b-ab9c-6395aebdfe6e",
             "tls": {
                 "enabled": true,
-                "insecure": true,
+                "insecure": false,
                 "server_name": "ld.3lmet.yuiuingkig.icu"
             }
         },
@@ -724,7 +949,7 @@
             "password": "39f2a2cd-5469-428b-ab9c-6395aebdfe6e",
             "tls": {
                 "enabled": true,
-                "insecure": true,
+                "insecure": false,
                 "server_name": "ld.xghe.yuiuingkig.icu"
             }
         },
@@ -736,7 +961,7 @@
             "password": "39f2a2cd-5469-428b-ab9c-6395aebdfe6e",
             "tls": {
                 "enabled": true,
-                "insecure": true,
+                "insecure": false,
                 "server_name": "ld.xghe.yuiuingkig.icu"
             }
         },
@@ -748,7 +973,7 @@
             "password": "39f2a2cd-5469-428b-ab9c-6395aebdfe6e",
             "tls": {
                 "enabled": true,
-                "insecure": true,
+                "insecure": false,
                 "server_name": "ld.xghe.yuiuingkig.icu"
             }
         },
@@ -760,7 +985,7 @@
             "password": "39f2a2cd-5469-428b-ab9c-6395aebdfe6e",
             "tls": {
                 "enabled": true,
-                "insecure": true,
+                "insecure": false,
                 "server_name": "ld.xghe.yuiuingkig.icu"
             }
         },
@@ -772,7 +997,7 @@
             "password": "39f2a2cd-5469-428b-ab9c-6395aebdfe6e",
             "tls": {
                 "enabled": true,
-                "insecure": true,
+                "insecure": false,
                 "server_name": "ld.xghe.yuiuingkig.icu"
             }
         },
@@ -784,7 +1009,7 @@
             "password": "39f2a2cd-5469-428b-ab9c-6395aebdfe6e",
             "tls": {
                 "enabled": true,
-                "insecure": true,
+                "insecure": false,
                 "server_name": "ld.xghe.yuiuingkig.icu"
             }
         },
@@ -796,7 +1021,7 @@
             "password": "39f2a2cd-5469-428b-ab9c-6395aebdfe6e",
             "tls": {
                 "enabled": true,
-                "insecure": true,
+                "insecure": false,
                 "server_name": "ld.usa01.yuiuingkig.icu"
             }
         },
@@ -808,7 +1033,7 @@
             "password": "39f2a2cd-5469-428b-ab9c-6395aebdfe6e",
             "tls": {
                 "enabled": true,
-                "insecure": true,
+                "insecure": false,
                 "server_name": "ld.mglsj.yuiuingkig.icu"
             }
         },
@@ -820,7 +1045,7 @@
             "password": "39f2a2cd-5469-428b-ab9c-6395aebdfe6e",
             "tls": {
                 "enabled": true,
-                "insecure": true,
+                "insecure": false,
                 "server_name": "ld.ysus.yuiuingkig.icu"
             }
         },
@@ -832,7 +1057,7 @@
             "password": "39f2a2cd-5469-428b-ab9c-6395aebdfe6e",
             "tls": {
                 "enabled": true,
-                "insecure": true,
+                "insecure": false,
                 "server_name": "ld.ysus.yuiuingkig.icu"
             }
         },
@@ -844,7 +1069,7 @@
             "password": "39f2a2cd-5469-428b-ab9c-6395aebdfe6e",
             "tls": {
                 "enabled": true,
-                "insecure": true,
+                "insecure": false,
                 "server_name": "ld.vegas.yuiuingkig.icu"
             }
         },
@@ -856,7 +1081,7 @@
             "password": "39f2a2cd-5469-428b-ab9c-6395aebdfe6e",
             "tls": {
                 "enabled": true,
-                "insecure": true,
+                "insecure": false,
                 "server_name": "ld.tw01.yuiuingkig.icu"
             }
         },
@@ -868,7 +1093,7 @@
             "password": "39f2a2cd-5469-428b-ab9c-6395aebdfe6e",
             "tls": {
                 "enabled": true,
-                "insecure": true,
+                "insecure": false,
                 "server_name": "ld.xinjp01.yuiuingkig.icu"
             }
         },
@@ -880,7 +1105,7 @@
             "password": "39f2a2cd-5469-428b-ab9c-6395aebdfe6e",
             "tls": {
                 "enabled": true,
-                "insecure": true,
+                "insecure": false,
                 "server_name": "ld.xjpsghkg.yuiuingkig.icu"
             }
         },
@@ -892,7 +1117,7 @@
             "password": "39f2a2cd-5469-428b-ab9c-6395aebdfe6e",
             "tls": {
                 "enabled": true,
-                "insecure": true,
+                "insecure": false,
                 "server_name": "ld.hg01.yuiuingkig.icu"
             }
         },
@@ -904,7 +1129,7 @@
             "password": "39f2a2cd-5469-428b-ab9c-6395aebdfe6e",
             "tls": {
                 "enabled": true,
-                "insecure": true,
+                "insecure": false,
                 "server_name": "ld.yd01.yuiuingkig.icu"
             }
         },
@@ -916,7 +1141,7 @@
             "password": "39f2a2cd-5469-428b-ab9c-6395aebdfe6e",
             "tls": {
                 "enabled": true,
-                "insecure": true,
+                "insecure": false,
                 "server_name": "ld.vie.yuiuingkig.icu"
             }
         },
@@ -928,7 +1153,7 @@
             "password": "39f2a2cd-5469-428b-ab9c-6395aebdfe6e",
             "tls": {
                 "enabled": true,
-                "insecure": true,
+                "insecure": false,
                 "server_name": "ld.tgcloud.yuiuingkig.icu"
             }
         },
@@ -940,7 +1165,7 @@
             "password": "39f2a2cd-5469-428b-ab9c-6395aebdfe6e",
             "tls": {
                 "enabled": true,
-                "insecure": true,
+                "insecure": false,
                 "server_name": "ld.ygld.yuiuingkig.icu"
             }
         },
@@ -952,7 +1177,7 @@
             "password": "39f2a2cd-5469-428b-ab9c-6395aebdfe6e",
             "tls": {
                 "enabled": true,
-                "insecure": true,
+                "insecure": false,
                 "server_name": "ld.dg01.yuiuingkig.icu"
             }
         },
@@ -964,7 +1189,7 @@
             "password": "39f2a2cd-5469-428b-ab9c-6395aebdfe6e",
             "tls": {
                 "enabled": true,
-                "insecure": true,
+                "insecure": false,
                 "server_name": "ld.gyels.yuiuingkig.icu"
             }
         },
@@ -976,7 +1201,7 @@
             "password": "39f2a2cd-5469-428b-ab9c-6395aebdfe6e",
             "tls": {
                 "enabled": true,
-                "insecure": true,
+                "insecure": false,
                 "server_name": "ld.mlxy-cn.yuiuingkig.icu"
             }
         },
@@ -988,7 +1213,7 @@
             "password": "39f2a2cd-5469-428b-ab9c-6395aebdfe6e",
             "tls": {
                 "enabled": true,
-                "insecure": true,
+                "insecure": false,
                 "server_name": "ld.ca.yuiuingkig.icu"
             }
         },
@@ -1000,87 +1225,56 @@
             "password": "39f2a2cd-5469-428b-ab9c-6395aebdfe6e",
             "tls": {
                 "enabled": true,
-                "insecure": true,
+                "insecure": false,
                 "server_name": "ld.tuerqitr.yuiuingkig.icu"
             }
         }
     ],
     "route": {
         "auto_detect_interface": true,
-        "final": "😮‍💨 Final",
+        "final": "proxy",
         "rules": [
             {
-                "ip_cidr": "114.132.54.192/32",
-                "outbound": "Direct"
-            },
-            {
-                "ip_cidr": "0.0.0.0/8",
-                "outbound": "Direct"
-            },
-            {
-                "ip_cidr": "10.0.0.0/8",
-                "outbound": "Direct"
-            },
-            {
-                "ip_cidr": "100.64.0.0/10",
-                "outbound": "Direct"
-            },
-            {
-                "ip_cidr": "127.0.0.0/8",
-                "outbound": "Direct"
-            },
-            {
-                "ip_cidr": "172.16.0.0/12",
-                "outbound": "Direct"
-            },
-            {
-                "ip_cidr": "192.168.0.0/16",
-                "outbound": "Direct"
-            },
-            {
-                "ip_cidr": "198.18.0.0/16",
-                "outbound": "Direct"
-            },
-            {
-                "ip_cidr": "224.0.0.0/4",
-                "outbound": "Direct"
-            },
-            {
-                "ip_cidr": "::1/128",
-                "outbound": "Direct"
-            },
-            {
-                "ip_cidr": "fc00::/7",
-                "outbound": "Direct"
-            },
-            {
-                "ip_cidr": "fe80::/10",
-                "outbound": "Direct"
-            },
-            {
-                "ip_cidr": "fd00::/8",
-                "outbound": "Direct"
-            },
-            {
-                "protocol": "dns",
+                "type": "logical",
+                "mode": "or",
+                "rules": [
+                    {
+                        "protocol": "dns"
+                    },
+                    {
+                        "port": 53
+                    }
+                ],
                 "outbound": "dns-out"
             },
             {
-                "network": "udp",
-                "port": 443,
-                "outbound": "Block"
+                "type": "logical",
+                "mode": "or",
+                "rules": [
+                    {
+                        "port": 853
+                    },
+                    {
+                        "network": "udp",
+                        "port": 443
+                    },
+                    {
+                        "protocol": "stun"
+                    }
+                ],
+                "outbound": "block"
             },
             {
                 "rule_set": "geosite-category-ads-all",
-                "outbound": "🌱 Purification"
+                "outbound": "🛑 AdBlock"
             },
             {
-                "clash_mode": "Direct",
-                "outbound": "Direct"
+                "clash_mode": "direct",
+                "outbound": "direct"
             },
             {
                 "clash_mode": "global",
-                "outbound": "🛩️ NodeSelected"
+                "outbound": "proxy"
             },
             {
                 "domain": [
@@ -1089,34 +1283,57 @@
                     "yacd.haishan.me",
                     "d.metacubex.one"
                 ],
-                "outbound": "Direct"
+                "outbound": "direct"
             },
             {
                 "rule_set": "geosite-openai",
-                "outbound": "🤖 AI"
+                "outbound": "🤖 OpenAI"
             },
             {
-                "rule_set": [
-                    "geosite-github",
-                    "geoip-telegram",
-                    "geoip-twitter",
-                    "geosite-twitter",
-                    "geoip-facebook",
-                    "geosite-facebook",
-                    "geosite-twitter",
-                    "geosite-instagram",
-                    "geosite-amazon",
-                    "geosite-category-games"
-                ],
-                "outbound": "🛩️ NodeSelected"
+                "rule_set": "geosite-youtube",
+                "outbound": "🌌 Google"
+            },
+            {
+                "rule_set": "geoip-google",
+                "outbound": "🌌 Google"
             },
             {
                 "rule_set": [
                     "geosite-google",
-                    "geoip-google",
-                    "geosite-youtube"
+                    "geosite-github"
                 ],
-                "outbound": "🌐 Google"
+                "outbound": "🌌 Google"
+            },
+            {
+                "rule_set": "geoip-telegram",
+                "outbound": "📟 Telegram"
+            },
+            {
+                "rule_set": "geosite-telegram",
+                "outbound": "📟 Telegram"
+            },
+            {
+                "rule_set": "geoip-twitter",
+                "outbound": "🐦 Twitter"
+            },
+            {
+                "rule_set": "geosite-twitter",
+                "outbound": "🐦 Twitter"
+            },
+            {
+                "rule_set": "geoip-facebook",
+                "outbound": "👤 Facebook"
+            },
+            {
+                "rule_set": [
+                    "geosite-facebook",
+                    "geosite-instagram"
+                ],
+                "outbound": "👤 Facebook"
+            },
+            {
+                "rule_set": "geosite-amazon",
+                "outbound": "🛍️ Amazon"
             },
             {
                 "rule_set": "geosite-apple",
@@ -1124,37 +1341,45 @@
             },
             {
                 "rule_set": "geosite-microsoft",
-                "outbound": "Ⓜ️ Microsoft"
+                "outbound": "🧩 Microsoft"
+            },
+            {
+                "rule_set": "geosite-category-games",
+                "outbound": "🎮 Game"
             },
             {
                 "rule_set": "geosite-bilibili",
-                "outbound": "Direct"
+                "outbound": "📺 Bilibili"
+            },
+            {
+                "rule_set": "geoip-netflix",
+                "outbound": "🎬 MediaVideo"
             },
             {
                 "rule_set": [
                     "geosite-tiktok",
                     "geosite-netflix",
-                    "geoip-netflix",
                     "geosite-hbo",
                     "geosite-disney",
                     "geosite-primevideo"
                 ],
-                "outbound": "👀 ForeignMedia"
+                "outbound": "🎬 MediaVideo"
             },
             {
                 "rule_set": "geosite-geolocation-!cn",
-                "outbound": "🎯 Foreign"
+                "outbound": "🌏 !cn"
             },
             {
                 "ip_is_private": true,
-                "outbound": "🇨🇳 China"
+                "outbound": "🌏 cn"
             },
             {
-                "rule_set": [
-                    "geosite-cn",
-                    "geoip-cn"
-                ],
-                "outbound": "🇨🇳 China"
+                "rule_set": "geoip-cn",
+                "outbound": "🌏 cn"
+            },
+            {
+                "rule_set": "geosite-cn",
+                "outbound": "🌏 cn"
             }
         ],
         "rule_set": [
@@ -1162,190 +1387,190 @@
                 "tag": "geoip-google",
                 "type": "remote",
                 "format": "binary",
-                "url": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geoip/google.srs",
-                "download_detour": "⚡️ Auto"
+                "url": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@sing/geo/geoip/google.srs",
+                "download_detour": "direct"
             },
             {
                 "tag": "geoip-telegram",
                 "type": "remote",
                 "format": "binary",
-                "url": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geoip/telegram.srs",
-                "download_detour": "⚡️ Auto"
+                "url": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@sing/geo/geoip/telegram.srs",
+                "download_detour": "direct"
             },
             {
                 "tag": "geoip-twitter",
                 "type": "remote",
                 "format": "binary",
-                "url": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geoip/twitter.srs",
-                "download_detour": "⚡️ Auto"
+                "url": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@sing/geo/geoip/twitter.srs",
+                "download_detour": "direct"
             },
             {
                 "tag": "geoip-facebook",
                 "type": "remote",
                 "format": "binary",
-                "url": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geoip/facebook.srs",
-                "download_detour": "⚡️ Auto"
+                "url": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@sing/geo/geoip/facebook.srs",
+                "download_detour": "direct"
             },
             {
                 "tag": "geoip-netflix",
                 "type": "remote",
                 "format": "binary",
-                "url": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geoip/netflix.srs",
-                "download_detour": "⚡️ Auto"
+                "url": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@sing/geo/geoip/netflix.srs",
+                "download_detour": "direct"
             },
             {
                 "tag": "geoip-cn",
                 "type": "remote",
                 "format": "binary",
-                "url": "https://raw.githubusercontent.com/SagerNet/sing-geoip/rule-set/geoip-cn.srs",
-                "download_detour": "⚡️ Auto"
+                "url": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@sing/geo/geoip/cn.srs",
+                "download_detour": "direct"
             },
             {
                 "tag": "geosite-openai",
                 "type": "remote",
                 "format": "binary",
-                "url": "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-openai.srs",
-                "download_detour": "⚡️ Auto"
+                "url": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@sing/geo/geosite/openai.srs",
+                "download_detour": "direct"
             },
             {
                 "tag": "geosite-youtube",
                 "type": "remote",
                 "format": "binary",
-                "url": "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-youtube.srs",
-                "download_detour": "⚡️ Auto"
+                "url": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@sing/geo/geosite/youtube.srs",
+                "download_detour": "direct"
             },
             {
                 "tag": "geosite-google",
                 "type": "remote",
                 "format": "binary",
-                "url": "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-google.srs",
-                "download_detour": "⚡️ Auto"
+                "url": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@sing/geo/geosite/google.srs",
+                "download_detour": "direct"
             },
             {
                 "tag": "geosite-github",
                 "type": "remote",
                 "format": "binary",
-                "url": "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-github.srs",
-                "download_detour": "⚡️ Auto"
+                "url": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@sing/geo/geosite/github.srs",
+                "download_detour": "direct"
             },
             {
                 "tag": "geosite-telegram",
                 "type": "remote",
                 "format": "binary",
-                "url": "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-telegram.srs",
-                "download_detour": "⚡️ Auto"
+                "url": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@sing/geo/geosite/telegram.srs",
+                "download_detour": "direct"
             },
             {
                 "tag": "geosite-twitter",
                 "type": "remote",
                 "format": "binary",
-                "url": "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-twitter.srs",
-                "download_detour": "⚡️ Auto"
+                "url": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@sing/geo/geosite/twitter.srs",
+                "download_detour": "direct"
             },
             {
                 "tag": "geosite-facebook",
                 "type": "remote",
                 "format": "binary",
-                "url": "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-facebook.srs",
-                "download_detour": "⚡️ Auto"
+                "url": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@sing/geo/geosite/facebook.srs",
+                "download_detour": "direct"
             },
             {
                 "tag": "geosite-instagram",
                 "type": "remote",
                 "format": "binary",
-                "url": "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-instagram.srs",
-                "download_detour": "⚡️ Auto"
+                "url": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@sing/geo/geosite/instagram.srs",
+                "download_detour": "direct"
             },
             {
                 "tag": "geosite-amazon",
                 "type": "remote",
                 "format": "binary",
-                "url": "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-amazon.srs",
-                "download_detour": "⚡️ Auto"
+                "url": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@sing/geo/geosite/amazon.srs",
+                "download_detour": "direct"
             },
             {
                 "tag": "geosite-apple",
                 "type": "remote",
                 "format": "binary",
-                "url": "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-apple.srs",
-                "download_detour": "⚡️ Auto"
+                "url": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@sing/geo/geosite/apple.srs",
+                "download_detour": "direct"
             },
             {
                 "tag": "geosite-microsoft",
                 "type": "remote",
                 "format": "binary",
-                "url": "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-microsoft.srs",
-                "download_detour": "⚡️ Auto"
+                "url": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@sing/geo/geosite/microsoft.srs",
+                "download_detour": "direct"
             },
             {
                 "tag": "geosite-category-games",
                 "type": "remote",
                 "format": "binary",
-                "url": "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-category-games.srs",
-                "download_detour": "⚡️ Auto"
+                "url": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@sing/geo/geosite/category-games.srs",
+                "download_detour": "direct"
             },
             {
                 "tag": "geosite-bilibili",
                 "type": "remote",
                 "format": "binary",
-                "url": "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-bilibili.srs",
-                "download_detour": "⚡️ Auto"
+                "url": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@sing/geo/geosite/bilibili.srs",
+                "download_detour": "direct"
             },
             {
                 "tag": "geosite-tiktok",
                 "type": "remote",
                 "format": "binary",
-                "url": "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-tiktok.srs",
-                "download_detour": "⚡️ Auto"
+                "url": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@sing/geo/geosite/tiktok.srs",
+                "download_detour": "direct"
             },
             {
                 "tag": "geosite-netflix",
                 "type": "remote",
                 "format": "binary",
-                "url": "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-netflix.srs",
-                "download_detour": "⚡️ Auto"
+                "url": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@sing/geo/geosite/netflix.srs",
+                "download_detour": "direct"
             },
             {
                 "tag": "geosite-hbo",
                 "type": "remote",
                 "format": "binary",
-                "url": "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-hbo.srs",
-                "download_detour": "⚡️ Auto"
+                "url": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@sing/geo/geosite/hbo.srs",
+                "download_detour": "direct"
             },
             {
                 "tag": "geosite-disney",
                 "type": "remote",
                 "format": "binary",
-                "url": "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-disney.srs",
-                "download_detour": "⚡️ Auto"
+                "url": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@sing/geo/geosite/disney.srs",
+                "download_detour": "direct"
             },
             {
                 "tag": "geosite-primevideo",
                 "type": "remote",
                 "format": "binary",
-                "url": "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-primevideo.srs",
-                "download_detour": "⚡️ Auto"
+                "url": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@sing/geo/geosite/primevideo.srs",
+                "download_detour": "direct"
             },
             {
                 "tag": "geosite-cn",
                 "type": "remote",
                 "format": "binary",
-                "url": "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-cn.srs",
-                "download_detour": "⚡️ Auto"
+                "url": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@sing/geo/geosite/cn.srs",
+                "download_detour": "direct"
             },
             {
                 "tag": "geosite-geolocation-!cn",
                 "type": "remote",
                 "format": "binary",
-                "url": "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-geolocation-!cn.srs",
-                "download_detour": "⚡️ Auto"
+                "url": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@sing/geo/geosite/geolocation-!cn.srs",
+                "download_detour": "direct"
             },
             {
                 "tag": "geosite-category-ads-all",
                 "type": "remote",
                 "format": "binary",
-                "url": "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-category-ads-all.srs",
-                "download_detour": "⚡️ Auto"
+                "url": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@sing/geo/geosite/category-ads-all.srs",
+                "download_detour": "direct"
             }
         ]
     }
