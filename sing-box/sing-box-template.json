@@ -106,9 +106,14 @@
             "outbounds": [
                 "⚡️ Auto",
                 "Direct",
+                "🇭🇰 Hong Kong",
+                "🇹🇼 Taiwan",
+                "🇸🇬 Singapore",
+                "🇺🇸 America",
+                "🇯🇵 Japan",
+                "✈️ Others",
                 "{all}"
-            ],
-            "default": "🇭🇰 Hong Kong"
+            ]
         },
         {
             "tag": "⚡️ Auto",
