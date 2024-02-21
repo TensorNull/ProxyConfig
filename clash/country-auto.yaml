@@ -1,0 +1,42 @@
+[custom]
+
+;filter: 
+
+custom_proxy_group=🛩️ NodeSelected`select`[]🇭🇰 Hong Kong`[]🇹🇼 Taiwan`[]🇸🇬 Singapore`[]🇺🇸 America`[]⚡️ Auto`[]DIRECT`.*
+custom_proxy_group=⚡️ Auto`url-test`.*`http://www.gstatic.com/generate_204`30,,50
+custom_proxy_group=👀 ForeignMedia`select`[]🛩️ NodeSelected`[]🇭🇰 Hong Kong`[]🇹🇼 Taiwan`[]🇸🇬 Singapore`[]🇺🇸 America`[]🎯 Foreign`[]✈️ Others
+custom_proxy_group=Ⓜ️ Microsoft`select`DIRECT`[]🛩️ NodeSelected`[]🇭🇰 Hong Kong`[]🇹🇼 Taiwan`[]🇸🇬 Singapore`[]🇺🇸 America`[]🎯 Foreign`[]✈️ Others
+custom_proxy_group=🍏 Apple`select`DIRECT`[]🛩️ NodeSelected`[]🇭🇰 Hong Kong`[]🇹🇼 Taiwan`[]🇸🇬 Singapore`[]🇺🇸 America`[]🎯 Foreign`[]✈️ Others
+custom_proxy_group=🌐 Google`select`[]🛩️ NodeSelected`[]🎯 Foreign`[]⚡️ Auto`.*
+custom_proxy_group=🎯 Foreign`select`[]🛩️ NodeSelected`[]DIRECT`[]⚡️ Auto`.*
+custom_proxy_group=🇨🇳 China`select`[]DIRECT`.*
+custom_proxy_group=🌱 Purification`select`[]REJECT`[]DIRECT
+custom_proxy_group=🤖 AI`select`[]🇺🇸 America`[]🇭🇰 Hong Kong`[]🇹🇼 Taiwan`[]🇸🇬 Singapore`[]✈️ Others
+custom_proxy_group=🇭🇰 Hong Kong`url-test`.🇭🇰|HK|hk|香港|港|HongKong`http://www.gstatic.com/generate_204`500,,50
+custom_proxy_group=🇹🇼 Taiwan`url-test`.🇹🇼|TW|tw|台湾|臺灣|台|Taiwan`http://www.gstatic.com/generate_204`500,,50
+custom_proxy_group=🇸🇬 Singapore`url-test`.🇸🇬|SG|sg|新加坡|狮|Singapore`http://www.gstatic.com/generate_204`500,,50
+custom_proxy_group=🇺🇸 America`url-test`.🇺🇸|US|us|美国|美|United States`http://www.gstatic.com/generate_204`500,,50
+custom_proxy_group=✈️ Others`url-test`^(?!.*\b(🇭🇰|HK|hk|香港|港|HongKong|🇹🇼|TW|tw|台湾|臺灣|台|Taiwan|🇸🇬|SG|sg|新加坡|狮|Singapore|🇺🇸|US|us|美国|美|United States)\b).*`http://www.gstatic.com/generate_204`500,,50
+custom_proxy_group=😮‍💨 Final`select`[]🛩️ NodeSelected`[]🎯 Foreign`[]⚡️ Auto`.*
+
+ruleset=DIRECT,no-resolve,https://raw.githubusercontent.com/Xie-Muxi/ProxyConfig/main/rule/clash/no-resolve.list
+ruleset=🤖 AI,https://raw.githubusercontent.com/Xie-Muxi/ProxyConfig/main/rule/clash/AI.list
+ruleset=🎯 Foreign,https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/LocalAreaNetwork.list
+ruleset=🛩️ NodeSelected,https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/UnBan.list
+ruleset=🌱 Purification,https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/BanAD.list
+ruleset=🌱 Purification,https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/BanProgramAD.list
+ruleset=🌐 Google,https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Ruleset/GoogleFCM.list
+ruleset=🎯 Foreign,https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/GoogleCN.list
+ruleset=🎯 Foreign,https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Ruleset/SteamCN.list
+ruleset=Ⓜ️ Microsoft,https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Microsoft.list
+ruleset=🍏 Apple,https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Apple.list
+ruleset=👀 ForeignMedia,https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/ProxyMedia.list
+ruleset=🛩️ NodeSelected,https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/ProxyLite.list
+ruleset=🇨🇳 China,https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/ChinaDomain.list
+ruleset=🇨🇳 China,https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/ChinaCompanyIp.list
+ruleset=🇨🇳 China,[]GEOIP,CN
+;ruleset=🎯 Foreign,[]GEOIP,LAN
+ruleset=😮‍💨 Final,[]FINAL
+
+enable_rule_generator=true
+overwrite_original_rules=true

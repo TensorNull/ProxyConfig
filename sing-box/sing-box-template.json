@@ -110,7 +110,6 @@
                 "🇹🇼 Taiwan",
                 "🇸🇬 Singapore",
                 "🇺🇸 America",
-                "🇯🇵 Japan",
                 "✈️ Others",
                 "{all}"
             ],
@@ -150,7 +149,6 @@
                 "🇹🇼 Taiwan",
                 "🇸🇬 Singapore",
                 "🇺🇸 America",
-                "🇯🇵 Japan",
                 "✈️ Others"
             ],
             "default": "🇭🇰 Hong Kong"
@@ -164,7 +162,6 @@
                 "🇹🇼 Taiwan",
                 "🇸🇬 Singapore",
                 "🇺🇸 America",
-                "🇯🇵 Japan",
                 "✈️ Others"
             ],
             "default": "Direct"
@@ -178,7 +175,6 @@
                 "🇹🇼 Taiwan",
                 "🇸🇬 Singapore",
                 "🇺🇸 America",
-                "🇯🇵 Japan",
                 "✈️ Others"
             ],
             "default": "🇭🇰 Hong Kong"
@@ -192,7 +188,6 @@
                 "🇹🇼 Taiwan",
                 "🇸🇬 Singapore",
                 "🇺🇸 America",
-                "🇯🇵 Japan",
                 "✈️ Others"
             ],
             "default": "🇭🇰 Hong Kong"
@@ -206,7 +201,6 @@
                 "🇹🇼 Taiwan",
                 "🇸🇬 Singapore",
                 "🇺🇸 America",
-                "🇯🇵 Japan",
                 "✈️ Others"
             ],
             "default": "🇭🇰 Hong Kong"
@@ -238,7 +232,6 @@
                 "🇹🇼 Taiwan",
                 "🇸🇬 Singapore",
                 "🇺🇸 America",
-                "🇯🇵 Japan",
                 "✈️ Others"
             ],
             "default": "🇺🇸 America"
@@ -272,8 +265,7 @@
             "tag": "🇹🇼 Taiwan",
             "type": "selector",
             "outbounds": [
-                "{all}",
-                "🛩️ NodeSelected"
+                "{all}"
             ],
             "filter": [
                 {
@@ -301,27 +293,10 @@
             ]
         },
         {
-            "tag": "🇯🇵 Japan",
-            "type": "selector",
-            "outbounds": [
-                "{all}",
-                "🛩️ NodeSelected"
-            ],
-            "filter": [
-                {
-                    "action": "include",
-                    "keywords": [
-                        "🇯🇵|JP|jp|日本|日|Japan"
-                    ]
-                }
-            ]
-        },
-        {
             "tag": "🇺🇸 America",
             "type": "selector",
             "outbounds": [
-                "{all}",
-                "🛩️ NodeSelected"
+                "{all}"
             ],
             "filter": [
                 {
@@ -336,14 +311,13 @@
             "tag": "✈️ Others",
             "type": "selector",
             "outbounds": [
-                "{all}",
-                "🛩️ NodeSelected"
+                "{all}"
             ],
             "filter": [
                 {
                     "action": "exclude",
                     "keywords": [
-                        "🇭🇰|HK|hk|香港|香|🇹🇼|TW|tw|台湾|台|🇸🇬|SG|sg|新加坡|狮|🇯🇵|JP|jp|日本|日|🇺🇸|US|us|美国|美"
+                        "🇭🇰|HK|hk|香港|香|🇹🇼|TW|tw|台湾|台|🇸🇬|SG|sg|新加坡|狮|🇯🇵|JP|jp|日本|日|🇺🇸|US|us|美国|美|网站|地址|剩余|过期|时间|有效|域名|套餐|到期"
                     ]
                 }
             ]
