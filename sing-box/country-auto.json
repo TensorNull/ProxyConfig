@@ -270,6 +270,9 @@
             "url": "http://www.gstatic.com/generate_204",
             "interval": "5m",
             "tolerance": 50,
+            "outbounds": [
+                "{all}"
+            ],
             "filter": [
                 {
                     "action": "include",
