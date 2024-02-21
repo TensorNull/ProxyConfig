@@ -280,8 +280,7 @@
             "tag": "🇸🇬 Singapore",
             "type": "selector",
             "outbounds": [
-                "{all}",
-                "🛩️ NodeSelected"
+                "{all}"
             ],
             "filter": [
                 {

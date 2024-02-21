@@ -286,8 +286,7 @@
             "interval": "5m",
             "tolerance": 50,
             "outbounds": [
-                "{all}",
-                "🛩️ NodeSelected"
+                "{all}"
             ],
             "filter": [
                 {
