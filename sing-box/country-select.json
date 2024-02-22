@@ -20,18 +20,27 @@
     "dns": {
         "servers": [
             {
-                "tag": "proxyDns",
-                "address": "tls://8.8.8.8",
-                "detour": "🛩️ NodeSelected"
+                "tag": "dns_proxy",
+                "address": "https://1.1.1.1/dns-query",
+                "detour": "🛩️ NodeSelected",
+                "strategy": "prefer_ipv4"
             },
             {
-                "tag": "localDns",
-                "address": "https://223.5.5.5/dns-query",
+                "tag": "dns_direct",
+                "address": "https://sm2.doh.pub/dns-query",
+                "address_resolver": "dns_resolver",
+                "strategy": "prefer_ipv4",
                 "detour": "Direct"
             },
             {
-                "tag": "Block",
+                "tag": "dns_block",
                 "address": "rcode://success"
+            },
+            {
+                "tag": "dns_resolver",
+                "address": "119.29.29.29",
+                "strategy": "prefer_ipv4",
+                "detour": "Direct"
             }
         ],
         "rules": [
@@ -41,36 +50,52 @@
                     "cdn.jsdelivr.net",
                     "testingcf.jsdelivr.net"
                 ],
-                "server": "localDns"
-            },
-            {
-                "rule_set": "geosite-category-ads-all",
-                "server": "block"
+                "server": "dns_resolver"
             },
             {
                 "outbound": "any",
-                "server": "localDns",
+                "server": "dns_resolver",
                 "disable_cache": true
             },
             {
                 "rule_set": "geosite-cn",
-                "server": "localDns"
+                "server": "dns_resolver"
             },
             {
-                "clash_mode": "Direct",
-                "server": "localDns"
+                "clash_mode": "direct",
+                "server": "dns_resolver"
             },
             {
                 "clash_mode": "global",
-                "server": "proxyDns"
+                "server": "dns_proxy "
+            },
+            {
+                "process_name": [
+                    "TencentMeeting",
+                    "NemoDesktop",
+                    "ToDesk",
+                    "ToDesk_Service",
+                    "WeChat",
+                    "QQ",
+                    "Tailscale",
+                    "wireguard-go",
+                    "Tunnelblick",
+                    "softwareupdated",
+                    "kubectl"
+                ],
+                "server": "dns_direct"
             },
             {
                 "rule_set": "geosite-geolocation-!cn",
-                "server": "proxyDns"
+                "server": "dns_proxy "
+            },
+            {
+                "rule_set": "geosite-category-ads-all",
+                "server": "block"
             }
         ],
-        "final": "localDns",
-        "strategy": "prefer_ipv6"
+        "final": "dns_direct",
+        "strategy": "prefer_ipv4"
     },
     "inbounds": [
         {
