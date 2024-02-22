@@ -107,7 +107,7 @@
             "strict_route": false,
             "sniff": true,
             "endpoint_independent_nat": false,
-            "stack": "system",
+            "stack": "mixed",
             "platform": {
                 "http_proxy": {
                     "enabled": true,
