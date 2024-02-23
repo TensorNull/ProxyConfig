@@ -394,14 +394,6 @@
                 "outbound": "🛩️ NodeSelected"
             },
             {
-                "ip_is_private": true,
-                "outbound": "direct"
-            },
-            {
-                "source_ip_is_private": true,
-                "outbound": "direct"
-            },
-            {
                 "inbound": "dns-in",
                 "outbound": "dns-out"
             },
@@ -522,6 +514,14 @@
                     "geoip-cn"
                 ],
                 "outbound": "🇨🇳 China"
+            },
+            {
+                "ip_is_private": true,
+                "outbound": "direct"
+            },
+            {
+                "source_ip_is_private": true,
+                "outbound": "direct"
             }
         ],
         "rule_set": [
