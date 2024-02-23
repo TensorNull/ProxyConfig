@@ -5,7 +5,7 @@
     },
     "experimental": {
         "clash_api": {
-            "external_controller": "127.0.0.1:9090",
+            "external_controller": "0.0.0.0:9090",
             "external_ui": "ui",
             "secret": "",
             "external_ui_download_url": "",
@@ -99,13 +99,6 @@
     },
     "inbounds": [
         {
-            "type": "direct",
-            "tag": "dns-in",
-            "listen": "0.0.0.0",
-            "listen_port": 53,
-            "network": "udp"
-        },
-        {
             "type": "tun",
             "inet4_address": "172.19.0.1/30",
             "inet6_address": "fdfe:dcba:9876::1/126",
@@ -125,7 +118,7 @@
         },
         {
             "type": "mixed",
-            "listen": "127.0.0.1",
+            "listen": "0.0.0.0",
             "listen_port": 2080,
             "sniff": true
         }
@@ -400,10 +393,6 @@
             {
                 "source_ip_is_private": true,
                 "outbound": "direct"
-            },
-            {
-                "inbound": "dns-in",
-                "outbound": "dns-out"
             },
             {
                 "type": "logical",
