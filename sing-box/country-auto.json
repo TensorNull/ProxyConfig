@@ -99,13 +99,6 @@
     },
     "inbounds": [
         {
-            "type": "direct",
-            "tag": "dns-in",
-            "listen": "0.0.0.0",
-            "listen_port": 53,
-            "network": "udp"
-        },
-        {
             "type": "tun",
             "inet4_address": "172.19.0.1/30",
             "inet6_address": "fdfe:dcba:9876::1/126",
@@ -390,10 +383,6 @@
         "auto_detect_interface": true,
         "final": "😮‍💨 Final",
         "rules": [
-            {
-                "inbound": "dns-in",
-                "outbound": "dns-out"
-            },
             {
                 "type": "logical",
                 "mode": "or",
