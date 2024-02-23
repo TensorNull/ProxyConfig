@@ -30,7 +30,7 @@
                 "address": "https://sm2.doh.pub/dns-query",
                 "address_resolver": "dns_resolver",
                 "strategy": "prefer_ipv4",
-                "detour": "Direct"
+                "detour": "direct"
             },
             {
                 "tag": "dns_block",
@@ -40,7 +40,7 @@
                 "tag": "dns_resolver",
                 "address": "119.29.29.29",
                 "strategy": "prefer_ipv4",
-                "detour": "Direct"
+                "detour": "direct"
             }
         ],
         "rules": [
@@ -129,7 +129,7 @@
             "type": "selector",
             "outbounds": [
                 "⚡️ Auto",
-                "Direct",
+                "direct",
                 "🇭🇰 Hong Kong",
                 "🇹🇼 Taiwan",
                 "🇸🇬 Singapore",
@@ -168,7 +168,7 @@
             "tag": "👀 ForeignMedia",
             "type": "selector",
             "outbounds": [
-                "Direct",
+                "direct",
                 "🇭🇰 Hong Kong",
                 "🇹🇼 Taiwan",
                 "🇸🇬 Singapore",
@@ -181,20 +181,20 @@
             "tag": "🍎 Apple",
             "type": "selector",
             "outbounds": [
-                "Direct",
+                "direct",
                 "🇭🇰 Hong Kong",
                 "🇹🇼 Taiwan",
                 "🇸🇬 Singapore",
                 "🇺🇸 America",
                 "✈️ Others"
             ],
-            "default": "Direct"
+            "default": "direct"
         },
         {
             "tag": "Ⓜ️ Microsoft",
             "type": "selector",
             "outbounds": [
-                "Direct",
+                "direct",
                 "🇭🇰 Hong Kong",
                 "🇹🇼 Taiwan",
                 "🇸🇬 Singapore",
@@ -207,7 +207,7 @@
             "tag": "🌐 Google",
             "type": "selector",
             "outbounds": [
-                "Direct",
+                "direct",
                 "🇭🇰 Hong Kong",
                 "🇹🇼 Taiwan",
                 "🇸🇬 Singapore",
@@ -220,7 +220,7 @@
             "tag": "🎯 Foreign",
             "type": "selector",
             "outbounds": [
-                "Direct",
+                "direct",
                 "🇭🇰 Hong Kong",
                 "🇹🇼 Taiwan",
                 "🇸🇬 Singapore",
@@ -233,25 +233,25 @@
             "tag": "🇨🇳 China",
             "type": "selector",
             "outbounds": [
-                "Direct",
+                "direct",
                 "🛩️ NodeSelected"
             ],
-            "default": "Direct"
+            "default": "direct"
         },
         {
             "tag": "🌱 Purification",
             "type": "selector",
             "outbounds": [
-                "Block",
-                "Direct"
+                "block",
+                "direct"
             ],
-            "default": "Block"
+            "default": "block"
         },
         {
             "tag": "🤖 AI",
             "type": "selector",
             "outbounds": [
-                "Direct",
+                "direct",
                 "🇭🇰 Hong Kong",
                 "🇹🇼 Taiwan",
                 "🇸🇬 Singapore",
@@ -264,7 +264,7 @@
             "tag": "😮‍💨 Final",
             "type": "selector",
             "outbounds": [
-                "Direct",
+                "direct",
                 "⚡️ Auto",
                 "{all}"
             ],
@@ -276,7 +276,7 @@
                     ]
                 }
             ],
-            "default": "Direct"
+            "default": "direct"
         },
         {
             "tag": "🇭🇰 Hong Kong",
@@ -367,7 +367,7 @@
         },
         {
             "type": "direct",
-            "tag": "Direct"
+            "tag": "direct"
         },
         {
             "type": "dns",
@@ -375,7 +375,7 @@
         },
         {
             "type": "block",
-            "tag": "Block"
+            "tag": "block"
         }
     ],
     "route": {
