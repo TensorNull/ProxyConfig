@@ -372,6 +372,10 @@
         "final": "😮‍💨 Final",
         "rules": [
             {
+                "ip_cidr": "172.16.0.0/12",
+                "outbound": "Direct"
+            },
+            {
                 "type": "logical",
                 "mode": "or",
                 "rules": [
