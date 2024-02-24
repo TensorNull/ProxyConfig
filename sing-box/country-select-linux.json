@@ -133,6 +133,7 @@
         "✈️ Others",
         "{all}"
       ],
+      "default": "🇭🇰 Hong Kong",
       "filter": [
         {
           "action": "exclude",
