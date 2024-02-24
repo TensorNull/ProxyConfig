@@ -518,10 +518,6 @@
             {
                 "ip_is_private": true,
                 "outbound": "direct"
-            },
-            {
-                "source_ip_is_private": true,
-                "outbound": "direct"
             }
         ],
         "rule_set": [
