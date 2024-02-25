@@ -1,6 +1,6 @@
 {
     "log": {
-        "level": "debug",
+        "level": "info",
         "timestamp": true
     },
     "experimental": {
@@ -20,18 +20,24 @@
     "dns": {
         "servers": [
             {
-                "tag": "proxyDns",
-                "address": "tls://8.8.8.8",
+                "tag": "dns_proxy",
+                "address": "https://1.1.1.1/dns-query",
                 "detour": "🛩️ NodeSelected"
             },
             {
-                "tag": "localDns",
-                "address": "https://223.5.5.5/dns-query",
-                "detour": "Direct"
+                "tag": "dns_direct",
+                "address": "https://sm2.doh.pub/dns-query",
+                "address_resolver": "dns_resolver",
+                "detour": "direct"
             },
             {
-                "tag": "Block",
+                "tag": "dns_block",
                 "address": "rcode://success"
+            },
+            {
+                "tag": "dns_resolver",
+                "address": "119.29.29.29",
+                "detour": "direct"
             }
         ],
         "rules": [
@@ -41,38 +47,57 @@
                     "cdn.jsdelivr.net",
                     "testingcf.jsdelivr.net"
                 ],
-                "server": "localDns"
-            },
-            {
-                "rule_set": "geosite-category-ads-all",
-                "server": "block"
+                "server": "dns_resolver"
             },
             {
                 "outbound": "any",
-                "server": "localDns",
+                "server": "dns_resolver",
                 "disable_cache": true
             },
             {
                 "rule_set": "geosite-cn",
-                "server": "localDns"
+                "server": "dns_resolver"
             },
             {
-                "clash_mode": "Direct",
-                "server": "localDns"
+                "clash_mode": "direct",
+                "server": "dns_resolver"
             },
             {
                 "clash_mode": "global",
-                "server": "proxyDns"
+                "server": "dns_proxy "
+            },
+            {
+                "process_name": [
+                    "TencentMeeting",
+                    "NemoDesktop",
+                    "ToDesk",
+                    "ToDesk_Service",
+                    "WeChat",
+                    "QQ",
+                    "Tailscale"
+                ],
+                "server": "dns_direct"
             },
             {
                 "rule_set": "geosite-geolocation-!cn",
-                "server": "proxyDns"
+                "server": "dns_proxy "
+            },
+            {
+                "rule_set": "geosite-category-ads-all",
+                "server": "block"
             }
         ],
-        "final": "localDns",
+        "final": "dns_proxy",
         "strategy": "prefer_ipv6"
     },
     "inbounds": [
+        {
+            "type": "direct",
+            "tag": "dns-in",
+            "listen": "0.0.0.0",
+            "listen_port": 53,
+            "network": "udp"
+        },
         {
             "type": "tun",
             "inet4_address": "172.19.0.1/30",
@@ -82,7 +107,7 @@
             "strict_route": false,
             "sniff": true,
             "endpoint_independent_nat": false,
-            "stack": "system",
+            "stack": "mixed",
             "platform": {
                 "http_proxy": {
                     "enabled": true,
@@ -95,8 +120,7 @@
             "type": "mixed",
             "listen": "127.0.0.1",
             "listen_port": 2080,
-            "sniff": true,
-            "users": []
+            "sniff": true
         }
     ],
     "outbounds": [
@@ -105,7 +129,7 @@
             "type": "selector",
             "outbounds": [
                 "⚡️ Auto",
-                "Direct",
+                "direct",
                 "🇭🇰 Hong Kong",
                 "🇹🇼 Taiwan",
                 "🇸🇬 Singapore",
@@ -113,6 +137,7 @@
                 "✈️ Others",
                 "{all}"
             ],
+            "default": "🇭🇰 Hong Kong",
             "filter": [
                 {
                     "action": "exclude",
@@ -144,7 +169,7 @@
             "tag": "👀 ForeignMedia",
             "type": "selector",
             "outbounds": [
-                "Direct",
+                "direct",
                 "🇭🇰 Hong Kong",
                 "🇹🇼 Taiwan",
                 "🇸🇬 Singapore",
@@ -157,20 +182,20 @@
             "tag": "🍎 Apple",
             "type": "selector",
             "outbounds": [
-                "Direct",
+                "direct",
                 "🇭🇰 Hong Kong",
                 "🇹🇼 Taiwan",
                 "🇸🇬 Singapore",
                 "🇺🇸 America",
                 "✈️ Others"
             ],
-            "default": "Direct"
+            "default": "direct"
         },
         {
             "tag": "Ⓜ️ Microsoft",
             "type": "selector",
             "outbounds": [
-                "Direct",
+                "direct",
                 "🇭🇰 Hong Kong",
                 "🇹🇼 Taiwan",
                 "🇸🇬 Singapore",
@@ -183,7 +208,7 @@
             "tag": "🌐 Google",
             "type": "selector",
             "outbounds": [
-                "Direct",
+                "direct",
                 "🇭🇰 Hong Kong",
                 "🇹🇼 Taiwan",
                 "🇸🇬 Singapore",
@@ -196,7 +221,7 @@
             "tag": "🎯 Foreign",
             "type": "selector",
             "outbounds": [
-                "Direct",
+                "direct",
                 "🇭🇰 Hong Kong",
                 "🇹🇼 Taiwan",
                 "🇸🇬 Singapore",
@@ -209,25 +234,25 @@
             "tag": "🇨🇳 China",
             "type": "selector",
             "outbounds": [
-                "Direct",
+                "direct",
                 "🛩️ NodeSelected"
             ],
-            "default": "Direct"
+            "default": "direct"
         },
         {
             "tag": "🌱 Purification",
             "type": "selector",
             "outbounds": [
-                "Block",
-                "Direct"
+                "block",
+                "direct"
             ],
-            "default": "Block"
+            "default": "block"
         },
         {
             "tag": "🤖 AI",
             "type": "selector",
             "outbounds": [
-                "Direct",
+                "direct",
                 "🇭🇰 Hong Kong",
                 "🇹🇼 Taiwan",
                 "🇸🇬 Singapore",
@@ -240,7 +265,7 @@
             "tag": "😮‍💨 Final",
             "type": "selector",
             "outbounds": [
-                "Direct",
+                "direct",
                 "⚡️ Auto",
                 "{all}"
             ],
@@ -252,7 +277,7 @@
                     ]
                 }
             ],
-            "default": "Direct"
+            "default": "direct"
         },
         {
             "tag": "🇭🇰 Hong Kong",
@@ -288,8 +313,7 @@
             "tag": "🇸🇬 Singapore",
             "type": "selector",
             "outbounds": [
-                "{all}",
-                "🛩️ NodeSelected"
+                "{all}"
             ],
             "filter": [
                 {
@@ -332,7 +356,7 @@
         },
         {
             "type": "direct",
-            "tag": "Direct"
+            "tag": "direct"
         },
         {
             "type": "dns",
@@ -340,13 +364,21 @@
         },
         {
             "type": "block",
-            "tag": "Block"
+            "tag": "block"
         }
     ],
     "route": {
         "auto_detect_interface": true,
         "final": "😮‍💨 Final",
         "rules": [
+            {
+                "clash_mode": "global",
+                "outbound": "🛩️ NodeSelected"
+            },
+            {
+                "inbound": "dns-in",
+                "outbound": "dns-out"
+            },
             {
                 "type": "logical",
                 "mode": "or",
@@ -375,18 +407,14 @@
                         "protocol": "stun"
                     }
                 ],
-                "outbound": "Block"
+                "outbound": "block"
             },
             {
                 "rule_set": "geosite-category-ads-all",
                 "outbound": "🌱 Purification"
             },
             {
-                "clash_mode": "Direct",
-                "outbound": "Direct"
-            },
-            {
-                "clash_mode": "global",
+                "domain_keyword": "vercel.app",
                 "outbound": "🛩️ NodeSelected"
             },
             {
@@ -396,7 +424,7 @@
                     "yacd.haishan.me",
                     "d.metacubex.one"
                 ],
-                "outbound": "Direct"
+                "outbound": "direct"
             },
             {
                 "rule_set": [
@@ -442,7 +470,7 @@
                 "rule_set": [
                     "geosite-bilibili"
                 ],
-                "outbound": "Direct"
+                "outbound": "direct"
             },
             {
                 "rule_set": [
@@ -463,15 +491,15 @@
                 "outbound": "🎯 Foreign"
             },
             {
-                "ip_is_private": true,
-                "outbound": "Direct"
-            },
-            {
                 "rule_set": [
                     "geosite-cn",
                     "geoip-cn"
                 ],
                 "outbound": "🇨🇳 China"
+            },
+            {
+                "ip_is_private": true,
+                "outbound": "direct"
             }
         ],
         "rule_set": [

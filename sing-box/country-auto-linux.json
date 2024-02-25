@@ -22,14 +22,12 @@
             {
                 "tag": "dns_proxy",
                 "address": "https://1.1.1.1/dns-query",
-                "detour": "🛩️ NodeSelected",
-                "strategy": "prefer_ipv4"
+                "detour": "🛩️ NodeSelected"
             },
             {
                 "tag": "dns_direct",
                 "address": "https://sm2.doh.pub/dns-query",
                 "address_resolver": "dns_resolver",
-                "strategy": "prefer_ipv4",
                 "detour": "direct"
             },
             {
@@ -39,7 +37,6 @@
             {
                 "tag": "dns_resolver",
                 "address": "119.29.29.29",
-                "strategy": "prefer_ipv4",
                 "detour": "direct"
             }
         ],
@@ -77,11 +74,7 @@
                     "ToDesk_Service",
                     "WeChat",
                     "QQ",
-                    "Tailscale",
-                    "wireguard-go",
-                    "Tunnelblick",
-                    "softwareupdated",
-                    "kubectl"
+                    "Tailscale"
                 ],
                 "server": "dns_direct"
             },
@@ -94,8 +87,8 @@
                 "server": "block"
             }
         ],
-        "final": "dns_direct",
-        "strategy": "prefer_ipv4"
+        "final": "dns_proxy",
+        "strategy": "prefer_ipv6"
     },
     "inbounds": [
         {
