@@ -42,7 +42,11 @@
     ],
     "rules": [
       {
-        "domain": ["ghproxy.com", "cdn.jsdelivr.net", "testingcf.jsdelivr.net"],
+        "domain": [
+          "ghproxy.com",
+          "cdn.jsdelivr.net",
+          "testingcf.jsdelivr.net"
+        ],
         "server": "dns_resolver"
       },
       {
@@ -65,7 +69,7 @@
       {
         "process_name": [
           "TencentMeeting",
-          "NemoDesktop",
+          "BaiduNetdisk",
           "ToDesk",
           "ToDesk_Service",
           "WeChat",
@@ -137,18 +141,24 @@
       "filter": [
         {
           "action": "exclude",
-          "keywords": ["网站|地址|剩余|过期|时间|有效|域名|套餐|到期"]
+          "keywords": [
+            "网站|地址|剩余|过期|时间|有效|域名|套餐|到期"
+          ]
         }
       ]
     },
     {
       "tag": "⚡️ Auto",
       "type": "urltest",
-      "outbounds": ["{all}"],
+      "outbounds": [
+        "{all}"
+      ],
       "filter": [
         {
           "action": "exclude",
-          "keywords": ["网站|地址|剩余|过期|时间|有效|域名|套餐|到期"]
+          "keywords": [
+            "网站|地址|剩余|过期|时间|有效|域名|套餐|到期"
+          ]
         }
       ],
       "url": "http://www.gstatic.com/generate_204",
@@ -223,13 +233,19 @@
     {
       "tag": "🇨🇳 China",
       "type": "selector",
-      "outbounds": ["direct", "🛩️ NodeSelected"],
+      "outbounds": [
+        "direct",
+        "🛩️ NodeSelected"
+      ],
       "default": "direct"
     },
     {
       "tag": "🌱 Purification",
       "type": "selector",
-      "outbounds": ["block", "direct"],
+      "outbounds": [
+        "block",
+        "direct"
+      ],
       "default": "block"
     },
     {
@@ -248,11 +264,17 @@
     {
       "tag": "😮‍💨 Final",
       "type": "selector",
-      "outbounds": ["direct", "⚡️ Auto", "{all}"],
+      "outbounds": [
+        "direct",
+        "⚡️ Auto",
+        "{all}"
+      ],
       "filter": [
         {
           "action": "exclude",
-          "keywords": ["网站|地址|剩余|过期|时间|有效|域名|套餐|到期"]
+          "keywords": [
+            "网站|地址|剩余|过期|时间|有效|域名|套餐|到期"
+          ]
         }
       ],
       "default": "direct"
@@ -260,51 +282,69 @@
     {
       "tag": "🇭🇰 Hong Kong",
       "type": "selector",
-      "outbounds": ["{all}"],
+      "outbounds": [
+        "{all}"
+      ],
       "filter": [
         {
           "action": "include",
-          "keywords": ["🇭🇰|HK|hk|香港|港|HongKong"]
+          "keywords": [
+            "🇭🇰|HK|hk|香港|港|HongKong"
+          ]
         }
       ]
     },
     {
       "tag": "🇹🇼 Taiwan",
       "type": "selector",
-      "outbounds": ["{all}"],
+      "outbounds": [
+        "{all}"
+      ],
       "filter": [
         {
           "action": "include",
-          "keywords": ["🇹🇼|TW|tw|台湾|臺灣|台|Taiwan"]
+          "keywords": [
+            "🇹🇼|TW|tw|台湾|臺灣|台|Taiwan"
+          ]
         }
       ]
     },
     {
       "tag": "🇸🇬 Singapore",
       "type": "selector",
-      "outbounds": ["{all}"],
+      "outbounds": [
+        "{all}"
+      ],
       "filter": [
         {
           "action": "include",
-          "keywords": ["🇸🇬|SG|sg|新加坡|狮|Singapore"]
+          "keywords": [
+            "🇸🇬|SG|sg|新加坡|狮|Singapore"
+          ]
         }
       ]
     },
     {
       "tag": "🇺🇸 America",
       "type": "selector",
-      "outbounds": ["{all}"],
+      "outbounds": [
+        "{all}"
+      ],
       "filter": [
         {
           "action": "include",
-          "keywords": ["🇺🇸|US|us|美国|美|United States"]
+          "keywords": [
+            "🇺🇸|US|us|美国|美|United States"
+          ]
         }
       ]
     },
     {
       "tag": "✈️ Others",
       "type": "selector",
-      "outbounds": ["{all}"],
+      "outbounds": [
+        "{all}"
+      ],
       "filter": [
         {
           "action": "exclude",
@@ -387,7 +427,9 @@
         "outbound": "direct"
       },
       {
-        "rule_set": ["geosite-openai"],
+        "rule_set": [
+          "geosite-openai"
+        ],
         "outbound": "🤖 AI"
       },
       {
@@ -406,19 +448,28 @@
         "outbound": "🛩️ NodeSelected"
       },
       {
-        "rule_set": ["geosite-google", "geoip-google"],
+        "rule_set": [
+          "geosite-google",
+          "geoip-google"
+        ],
         "outbound": "🌐 Google"
       },
       {
-        "rule_set": ["geosite-apple"],
+        "rule_set": [
+          "geosite-apple"
+        ],
         "outbound": "🍎 Apple"
       },
       {
-        "rule_set": ["geosite-microsoft"],
+        "rule_set": [
+          "geosite-microsoft"
+        ],
         "outbound": "Ⓜ️ Microsoft"
       },
       {
-        "rule_set": ["geosite-bilibili"],
+        "rule_set": [
+          "geosite-bilibili"
+        ],
         "outbound": "direct"
       },
       {
@@ -434,11 +485,16 @@
         "outbound": "👀 ForeignMedia"
       },
       {
-        "rule_set": ["geosite-geolocation-!cn"],
+        "rule_set": [
+          "geosite-geolocation-!cn"
+        ],
         "outbound": "🎯 Foreign"
       },
       {
-        "rule_set": ["geosite-cn", "geoip-cn"],
+        "rule_set": [
+          "geosite-cn",
+          "geoip-cn"
+        ],
         "outbound": "🇨🇳 China"
       },
       {
