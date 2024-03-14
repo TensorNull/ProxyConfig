@@ -127,15 +127,14 @@
                 "🇹🇼 Taiwan",
                 "🇸🇬 Singapore",
                 "🇺🇸 America",
-                "✈️ Others",
-                "{all}"
+                "✈️ Others"
             ],
             "default": "🇭🇰 Hong Kong",
             "filter": [
                 {
                     "action": "exclude",
                     "keywords": [
-                        "网站|地址|剩余|过期|时间|有效|域名|套餐|到期"
+                        "网站|地址|剩余|过期|时间|有效|域名|套餐|到期|官网"
                     ]
                 }
             ]
@@ -143,6 +142,9 @@
         {
             "tag": "⚡️ Auto",
             "type": "urltest",
+            "url": "http://www.gstatic.com/generate_204",
+            "interval": "1m",
+            "tolerance": 50,
             "outbounds": [
                 "{all}"
             ],
@@ -150,13 +152,10 @@
                 {
                     "action": "exclude",
                     "keywords": [
-                        "网站|地址|剩余|过期|时间|有效|域名|套餐|到期"
+                        "网站|地址|剩余|过期|时间|有效|域名|套餐|到期|官网"
                     ]
                 }
-            ],
-            "url": "http://www.gstatic.com/generate_204",
-            "interval": "5m",
-            "tolerance": 50
+            ]
         },
         {
             "tag": "👀 ForeignMedia",
@@ -260,13 +259,16 @@
             "outbounds": [
                 "direct",
                 "⚡️ Auto",
-                "{all}"
+                "🇭🇰 Hong Kong",
+                "🇸🇬 Singapore",
+                "🇹🇼 Taiwan",
+                "🇺🇸 America"
             ],
             "filter": [
                 {
                     "action": "exclude",
                     "keywords": [
-                        "网站|地址|剩余|过期|时间|有效|域名|套餐|到期"
+                        "网站|地址|剩余|过期|时间|有效|域名|套餐|到期|官网"
                     ]
                 }
             ],
@@ -274,7 +276,10 @@
         },
         {
             "tag": "🇭🇰 Hong Kong",
-            "type": "selector",
+            "type": "urltest",
+            "url": "http://www.gstatic.com/generate_204",
+            "interval": "1m",
+            "tolerance": 50,
             "outbounds": [
                 "{all}"
             ],
@@ -289,7 +294,10 @@
         },
         {
             "tag": "🇹🇼 Taiwan",
-            "type": "selector",
+            "type": "urltest",
+            "url": "http://www.gstatic.com/generate_204",
+            "interval": "1m",
+            "tolerance": 50,
             "outbounds": [
                 "{all}"
             ],
@@ -304,7 +312,10 @@
         },
         {
             "tag": "🇸🇬 Singapore",
-            "type": "selector",
+            "type": "urltest",
+            "url": "http://www.gstatic.com/generate_204",
+            "interval": "1m",
+            "tolerance": 50,
             "outbounds": [
                 "{all}"
             ],
@@ -319,7 +330,10 @@
         },
         {
             "tag": "🇺🇸 America",
-            "type": "selector",
+            "type": "urltest",
+            "url": "http://www.gstatic.com/generate_204",
+            "interval": "1m",
+            "tolerance": 50,
             "outbounds": [
                 "{all}"
             ],
@@ -342,7 +356,7 @@
                 {
                     "action": "exclude",
                     "keywords": [
-                        "🇭🇰|HK|hk|香港|香|🇹🇼|TW|tw|台湾|台|🇸🇬|SG|sg|新加坡|狮|🇯🇵|JP|jp|日本|日|🇺🇸|US|us|美国|美|网站|地址|剩余|过期|时间|有效|域名|套餐|到期"
+                        "🇭🇰|HK|hk|香港|香|🇹🇼|TW|tw|台湾|台|🇸🇬|SG|sg|新加坡|狮|🇯🇵|JP|jp|日本|日|🇺🇸|US|us|美国|美|网站|地址|剩余|过期|时间|有效|域名|套餐|到期|官网"
                     ]
                 }
             ]

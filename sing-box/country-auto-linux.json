@@ -127,8 +127,7 @@
                 "🇹🇼 Taiwan",
                 "🇸🇬 Singapore",
                 "🇺🇸 America",
-                "✈️ Others",
-                "{all}"
+                "✈️ Others"
             ],
             "default": "🇭🇰 Hong Kong",
             "filter": [
@@ -260,7 +259,10 @@
             "outbounds": [
                 "direct",
                 "⚡️ Auto",
-                "{all}"
+                "🇭🇰 Hong Kong",
+                "🇸🇬 Singapore",
+                "🇹🇼 Taiwan",
+                "🇺🇸 America"
             ],
             "filter": [
                 {
