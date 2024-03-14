@@ -283,9 +283,7 @@
     },
     {
       "tag": "🇭🇰 Hong Kong",
-      "type": "urltest",
-      "url": "http://www.gstatic.com/generate_204",
-      "interval": "1m",
+      "type": "selector",
       "tolerance": 50,
       "outbounds": [
         "{all}"
@@ -301,10 +299,7 @@
     },
     {
       "tag": "🇹🇼 Taiwan",
-      "type": "urltest",
-      "url": "http://www.gstatic.com/generate_204",
-      "interval": "1m",
-      "tolerance": 50,
+      "type": "selector",
       "outbounds": [
         "{all}"
       ],
@@ -319,10 +314,7 @@
     },
     {
       "tag": "🇸🇬 Singapore",
-      "type": "urltest",
-      "url": "http://www.gstatic.com/generate_204",
-      "interval": "1m",
-      "tolerance": 50,
+      "type": "selector",
       "outbounds": [
         "{all}"
       ],
@@ -337,10 +329,7 @@
     },
     {
       "tag": "🇺🇸 America",
-      "type": "urltest",
-      "url": "http://www.gstatic.com/generate_204",
-      "interval": "1m",
-      "tolerance": 50,
+      "type": "selector",
       "outbounds": [
         "{all}"
       ],
