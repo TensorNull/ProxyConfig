@@ -277,7 +277,6 @@
         {
             "tag": "🇭🇰 Hong Kong",
             "type": "selector",
-            "tolerance": 50,
             "outbounds": [
                 "{all}"
             ],
