@@ -383,6 +383,10 @@
                 "outbound": "🛩️ NodeSelected"
             },
             {
+                "inbound": "dns-in",
+                "outbound": "dns-out"
+            },
+            {
                 "type": "logical",
                 "mode": "or",
                 "rules": [
@@ -492,6 +496,10 @@
                     "geosite-geolocation-!cn"
                 ],
                 "outbound": "🎯 Foreign"
+            },
+            {
+                "domain_keyword": "edu.cn",
+                "outbound": "direct"
             },
             {
                 "rule_set": [

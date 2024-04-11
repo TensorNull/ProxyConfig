@@ -505,6 +505,10 @@
                 "outbound": "🎯 Foreign"
             },
             {
+                "domain_keyword": "edu.cn",
+                "outbound": "direct"
+            },
+            {
                 "rule_set": [
                     "geosite-cn",
                     "geoip-cn"
