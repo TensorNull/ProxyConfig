@@ -509,6 +509,10 @@
                 "outbound": "direct"
             },
             {
+                "domain_keyword": "cn",
+                "outbound": "🇨🇳 China"
+            },
+            {
                 "rule_set": [
                     "geosite-cn",
                     "geoip-cn"
