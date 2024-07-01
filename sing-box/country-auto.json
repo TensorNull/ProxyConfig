@@ -500,7 +500,8 @@
             },
             {
                 "rule_set": [
-                    "geosite-geolocation-!cn"
+                    "geosite-geolocation-!cn",
+                    "geosite-binance"
                 ],
                 "outbound": "🎯 Foreign"
             },
@@ -593,6 +594,13 @@
                 "type": "remote",
                 "format": "binary",
                 "url": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@sing/geo/geosite/openai.srs",
+                "download_detour": "⚡️ Auto"
+            },
+            {
+                "tag": "geosite-binance",
+                "type": "remote",
+                "format": "binary",
+                "url": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@sing/geo/geosite/binance.srs",
                 "download_detour": "⚡️ Auto"
             },
             {
