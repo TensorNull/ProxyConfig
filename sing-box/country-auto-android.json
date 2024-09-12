@@ -516,6 +516,10 @@
             {
                 "ip_is_private": true,
                 "outbound": "direct"
+            },
+            {
+                "ip_cidr": "45.207.214.0/24",
+                "outbound": "direct"
             }
         ],
         "rule_set": [
