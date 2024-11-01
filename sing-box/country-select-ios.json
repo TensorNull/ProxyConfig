@@ -92,13 +92,6 @@
   },
   "inbounds": [
     {
-      "type": "direct",
-      "tag": "dns-in",
-      "listen": "0.0.0.0",
-      "listen_port": 53,
-      "network": "udp"
-    },
-    {
       "type": "tun",
       "inet4_address": "172.19.0.1/30",
       "inet6_address": "fdfe:dcba:9876::1/126",
@@ -115,12 +108,6 @@
           "server_port": 2080
         }
       }
-    },
-    {
-      "type": "mixed",
-      "listen": "127.0.0.1",
-      "listen_port": 2080,
-      "sniff": true
     }
   ],
   "outbounds": [
@@ -136,15 +123,7 @@
         "🇺🇸 America",
         "✈️ Others"
       ],
-      "default": "🇭🇰 Hong Kong",
-      "filter": [
-        {
-          "action": "exclude",
-          "keywords": [
-            "网站|地址|剩余|过期|时间|有效|域名|套餐|到期|官网"
-          ]
-        }
-      ]
+      "default": "🇭🇰 Hong Kong"
     },
     {
       "tag": "⚡️ Auto",
@@ -153,15 +132,62 @@
       "interval": "1m",
       "tolerance": 50,
       "outbounds": [
-        "{all}"
-      ],
-      "filter": [
-        {
-          "action": "exclude",
-          "keywords": [
-            "网站|地址|剩余|过期|时间|有效|域名|套餐|到期|官网"
-          ]
-        }
+        "🇭🇰 Bronze-香港-BGP-01",
+        "🇭🇰 Bronze-香港-Lite-02",
+        "🇭🇰 Bronze-香港-HGC-03",
+        "🇭🇰 Bronze-香港-HGC-04",
+        "🇭🇰 Bronze-香港-BGP-05",
+        "🇰🇷 Bronze-韩国-Cloud-01",
+        "🇯🇵 Bronze-日本-onep-01",
+        "🇹🇼 Bronze-台湾-Hinet-01",
+        "🇸🇬 Bronze-新加坡-onep-01",
+        "🇺🇸 Bronze-美国-onep-01",
+        "🇺🇸 Bronze-美国-onep-02",
+        "🇺🇸 Bronze-美国-Los-03",
+        "🇭🇰 Silver-香港-HKG-01",
+        "🇭🇰 Silver-香港-HKG-02",
+        "🇭🇰 Silver-香港-BGP-03",
+        "🇭🇰 Silver-香港-LMT-04",
+        "🇭🇰 Silver-香港-BGPZ-05",
+        "🇰🇷 Silver-韩国-商宽-01",
+        "🇹🇼 Silver-台湾-商宽-01",
+        "🇺🇸 Silver-美国-Host-01",
+        "🇺🇸 Silver-美国-BGP-02",
+        "🇺🇸 Silver-美国-CN2-03",
+        "🇺🇸 Silver-美国-Vegas-04",
+        "🇹🇭 Silver-泰国-商宽-01",
+        "🇲🇾 Silver-马来西亚-01",
+        "🇯🇵 Silver-日本-商宽-01",
+        "🇯🇵 Silver-日本-商宽-02",
+        "🇸🇬 Silver-新加坡-01",
+        "🇸🇬 Silver-新加坡-02",
+        "🇯🇵 Gold-日本-家宽-01",
+        "🇭🇰 Gold-香港-BGP-01",
+        "🇭🇰 Gold-香港-BGP-02",
+        "🇭🇰 Gold-香港-BN-03",
+        "🇭🇰 Gold-香港-BN-04",
+        "🇭🇰 Gold-香港-Pro-05",
+        "🇭🇰 Gold-香港-Pro-06",
+        "🇭🇰 Gold-香港-HEHIK-07",
+        "🇭🇰 Gold-香港-HEHIK-08",
+        "🇺🇸 Gold-美国-Gost-01",
+        "🇺🇸 Gold-美国-Cn2-02",
+        "🇺🇸 Gold-美国-原生-03",
+        "🇺🇸 Gold-美国-原生-04",
+        "🇺🇸 Gold-美国-Vegas-05",
+        "🇹🇼 Gold-台湾-Hinet-01",
+        "🇸🇬 Gold-新加坡-01",
+        "🇸🇬 Gold-新加坡-02",
+        "🇰🇷 Gold-韩国-KR-01",
+        "🇮🇳 Gold-印度-Ind-01",
+        "🇻🇳 Gold-越南-Vie-01",
+        "🇹🇭 Gold-泰国-Tha-01",
+        "🇬🇧 Gold-英国-Gbr-01",
+        "🇩🇪 Gold-德国-Ger-01",
+        "🇷🇺 Gold-俄罗斯-RUM-01",
+        "🇲🇾 Gold-马来西亚-01",
+        "🇨🇦 Gold-加拿大-ProCA",
+        "🇹🇷 Gold-土耳其-Tr-01"
       ]
     },
     {
@@ -271,89 +297,88 @@
         "🇹🇼 Taiwan",
         "🇺🇸 America"
       ],
-      "filter": [
-        {
-          "action": "exclude",
-          "keywords": [
-            "网站|地址|剩余|过期|时间|有效|域名|套餐|到期|官网"
-          ]
-        }
-      ],
       "default": "direct"
     },
     {
       "tag": "🇭🇰 Hong Kong",
       "type": "selector",
       "outbounds": [
-        "{all}"
-      ],
-      "filter": [
-        {
-          "action": "include",
-          "keywords": [
-            "🇭🇰|HK|hk|香港|港|HongKong"
-          ]
-        }
+        "🇭🇰 Bronze-香港-BGP-01",
+        "🇭🇰 Bronze-香港-Lite-02",
+        "🇭🇰 Bronze-香港-HGC-03",
+        "🇭🇰 Bronze-香港-HGC-04",
+        "🇭🇰 Bronze-香港-BGP-05",
+        "🇭🇰 Silver-香港-HKG-01",
+        "🇭🇰 Silver-香港-HKG-02",
+        "🇭🇰 Silver-香港-BGP-03",
+        "🇭🇰 Silver-香港-LMT-04",
+        "🇭🇰 Silver-香港-BGPZ-05",
+        "🇭🇰 Gold-香港-BGP-01",
+        "🇭🇰 Gold-香港-BGP-02",
+        "🇭🇰 Gold-香港-BN-03",
+        "🇭🇰 Gold-香港-BN-04",
+        "🇭🇰 Gold-香港-Pro-05",
+        "🇭🇰 Gold-香港-Pro-06",
+        "🇭🇰 Gold-香港-HEHIK-07",
+        "🇭🇰 Gold-香港-HEHIK-08"
       ]
     },
     {
       "tag": "🇹🇼 Taiwan",
       "type": "selector",
       "outbounds": [
-        "{all}"
-      ],
-      "filter": [
-        {
-          "action": "include",
-          "keywords": [
-            "🇹🇼|TW|tw|台湾|臺灣|台|Taiwan"
-          ]
-        }
+        "🇹🇼 Bronze-台湾-Hinet-01",
+        "🇹🇼 Silver-台湾-商宽-01",
+        "🇹🇼 Gold-台湾-Hinet-01"
       ]
     },
     {
       "tag": "🇸🇬 Singapore",
       "type": "selector",
       "outbounds": [
-        "{all}"
-      ],
-      "filter": [
-        {
-          "action": "include",
-          "keywords": [
-            "🇸🇬|SG|sg|新加坡|狮|Singapore"
-          ]
-        }
+        "🇸🇬 Bronze-新加坡-onep-01",
+        "🇸🇬 Silver-新加坡-01",
+        "🇸🇬 Silver-新加坡-02",
+        "🇸🇬 Gold-新加坡-01",
+        "🇸🇬 Gold-新加坡-02"
       ]
     },
     {
       "tag": "🇺🇸 America",
       "type": "selector",
       "outbounds": [
-        "{all}"
-      ],
-      "filter": [
-        {
-          "action": "include",
-          "keywords": [
-            "🇺🇸|US|us|美国|美|United States"
-          ]
-        }
+        "🇺🇸 Bronze-美国-onep-01",
+        "🇺🇸 Bronze-美国-onep-02",
+        "🇺🇸 Bronze-美国-Los-03",
+        "🇺🇸 Silver-美国-Host-01",
+        "🇺🇸 Silver-美国-BGP-02",
+        "🇺🇸 Silver-美国-CN2-03",
+        "🇺🇸 Silver-美国-Vegas-04",
+        "🇺🇸 Gold-美国-Gost-01",
+        "🇺🇸 Gold-美国-Cn2-02",
+        "🇺🇸 Gold-美国-原生-03",
+        "🇺🇸 Gold-美国-原生-04",
+        "🇺🇸 Gold-美国-Vegas-05"
       ]
     },
     {
       "tag": "✈️ Others",
       "type": "selector",
       "outbounds": [
-        "{all}"
-      ],
-      "filter": [
-        {
-          "action": "exclude",
-          "keywords": [
-            "🇭🇰|HK|hk|香港|香|🇹🇼|TW|tw|台湾|台|🇸🇬|SG|sg|新加坡|狮|🇯🇵|JP|jp|日本|日|🇺🇸|US|us|美国|美|网站|地址|剩余|过期|时间|有效|域名|套餐|到期|官网"
-          ]
-        }
+        "🇰🇷 Bronze-韩国-Cloud-01",
+        "🇰🇷 Silver-韩国-商宽-01",
+        "🇹🇭 Silver-泰国-商宽-01",
+        "🇲🇾 Silver-马来西亚-01",
+        "🇰🇷 Gold-韩国-KR-01",
+        "🇮🇳 Gold-印度-Ind-01",
+        "🇻🇳 Gold-越南-Vie-01",
+        "🇹🇭 Gold-泰国-Tha-01",
+        "🇬🇧 Gold-英国-Gbr-01",
+        "🇩🇪 Gold-德国-Ger-01",
+        "🇷🇺 Gold-俄罗斯-RUM-01",
+        "🇲🇾 Gold-马来西亚-01",
+        "🇨🇦 Gold-加拿大-ProCA",
+        "🇹🇷 Gold-土耳其-Tr-01"
       ]
     },
     {
@@ -367,6 +392,726 @@
     {
       "type": "block",
       "tag": "block"
+    },
+    {
+      "tag": "剩余流量：672.71 GB",
+      "type": "trojan",
+      "server": "zz.xgzl.fogvip-zz.uk",
+      "server_port": 50069,
+      "password": "39f2a2cd-5469-428b-ab9c-6395aebdfe6e",
+      "tls": {
+        "enabled": true,
+        "insecure": false,
+        "server_name": "ld.xgzl02.yuiuingkig.icu"
+      }
+    },
+    {
+      "tag": "距离下次重置剩余：9 天",
+      "type": "trojan",
+      "server": "zz.xgzl.fogvip-zz.uk",
+      "server_port": 50069,
+      "password": "39f2a2cd-5469-428b-ab9c-6395aebdfe6e",
+      "tls": {
+        "enabled": true,
+        "insecure": false,
+        "server_name": "ld.xgzl02.yuiuingkig.icu"
+      }
+    },
+    {
+      "tag": "套餐到期：2025-04-10",
+      "type": "trojan",
+      "server": "zz.xgzl.fogvip-zz.uk",
+      "server_port": 50069,
+      "password": "39f2a2cd-5469-428b-ab9c-6395aebdfe6e",
+      "tls": {
+        "enabled": true,
+        "insecure": false,
+        "server_name": "ld.xgzl02.yuiuingkig.icu"
+      }
+    },
+    {
+      "tag": "【永久域名Tafog.com】",
+      "type": "trojan",
+      "server": "zz.xgzl.fogvip-zz.uk",
+      "server_port": 50069,
+      "password": "39f2a2cd-5469-428b-ab9c-6395aebdfe6e",
+      "tls": {
+        "enabled": true,
+        "insecure": false,
+        "server_name": "ld.xgzl02.yuiuingkig.icu"
+      }
+    },
+    {
+      "tag": "🇭🇰 Bronze-香港-BGP-01",
+      "type": "trojan",
+      "server": "zz.xg01.fogvip-zz.uk",
+      "server_port": 40001,
+      "password": "39f2a2cd-5469-428b-ab9c-6395aebdfe6e",
+      "tls": {
+        "enabled": true,
+        "insecure": false,
+        "server_name": "ld.xgg01.yuiuingkig.icu"
+      }
+    },
+    {
+      "tag": "🇭🇰 Bronze-香港-Lite-02",
+      "type": "trojan",
+      "server": "zz.xgzl.fogvip-zz.uk",
+      "server_port": 50069,
+      "password": "39f2a2cd-5469-428b-ab9c-6395aebdfe6e",
+      "tls": {
+        "enabled": true,
+        "insecure": false,
+        "server_name": "ld.xgzl02.yuiuingkig.icu"
+      }
+    },
+    {
+      "tag": "🇭🇰 Bronze-香港-HGC-03",
+      "type": "trojan",
+      "server": "zz.xgb.fogvip-zz.uk",
+      "server_port": 40024,
+      "password": "39f2a2cd-5469-428b-ab9c-6395aebdfe6e",
+      "tls": {
+        "enabled": true,
+        "insecure": false,
+        "server_name": "ld.xghk03.yuiuingkig.icu"
+      }
+    },
+    {
+      "tag": "🇭🇰 Bronze-香港-HGC-04",
+      "type": "trojan",
+      "server": "zz.xgb.fogvip-zz.uk",
+      "server_port": 40025,
+      "password": "39f2a2cd-5469-428b-ab9c-6395aebdfe6e",
+      "tls": {
+        "enabled": true,
+        "insecure": false,
+        "server_name": "ld.xghk03.yuiuingkig.icu"
+      }
+    },
+    {
+      "tag": "🇭🇰 Bronze-香港-BGP-05",
+      "type": "trojan",
+      "server": "zz.xgys.fogvip-zz.uk",
+      "server_port": 40052,
+      "password": "39f2a2cd-5469-428b-ab9c-6395aebdfe6e",
+      "tls": {
+        "enabled": true,
+        "insecure": false,
+        "server_name": "ld.xgys01.yuiuingkig.icu"
+      }
+    },
+    {
+      "tag": "🇰🇷 Bronze-韩国-Cloud-01",
+      "type": "trojan",
+      "server": "zz.hg01.fogvip-zz.uk",
+      "server_port": 40021,
+      "password": "39f2a2cd-5469-428b-ab9c-6395aebdfe6e",
+      "tls": {
+        "enabled": true,
+        "insecure": false,
+        "server_name": "ld.hg01.yuiuingkig.icu"
+      }
+    },
+    {
+      "tag": "🇯🇵 Bronze-日本-onep-01",
+      "type": "trojan",
+      "server": "zz.jp01.fogvip-zz.uk",
+      "server_port": 40014,
+      "password": "39f2a2cd-5469-428b-ab9c-6395aebdfe6e",
+      "tls": {
+        "enabled": true,
+        "insecure": false,
+        "server_name": "ld.jp01.yuiuingkig.icu"
+      }
+    },
+    {
+      "tag": "🇹🇼 Bronze-台湾-Hinet-01",
+      "type": "trojan",
+      "server": "zz.tw01.fogvip-zz.uk",
+      "server_port": 40036,
+      "password": "39f2a2cd-5469-428b-ab9c-6395aebdfe6e",
+      "tls": {
+        "enabled": true,
+        "insecure": false,
+        "server_name": "ld.tw01.yuiuingkig.icu"
+      }
+    },
+    {
+      "tag": "🇸🇬 Bronze-新加坡-onep-01",
+      "type": "trojan",
+      "server": "zz.xinjp01.fogvip-zz.uk",
+      "server_port": 40013,
+      "password": "39f2a2cd-5469-428b-ab9c-6395aebdfe6e",
+      "tls": {
+        "enabled": true,
+        "insecure": false,
+        "server_name": "ld.xinjp01.yuiuingkig.icu"
+      }
+    },
+    {
+      "tag": "🇺🇸 Bronze-美国-onep-01",
+      "type": "trojan",
+      "server": "zz.mgxyt.fogvip-zz.uk",
+      "server_port": 40005,
+      "password": "39f2a2cd-5469-428b-ab9c-6395aebdfe6e",
+      "tls": {
+        "enabled": true,
+        "insecure": false,
+        "server_name": "ld.mgxyt.yuiuingkig.icu"
+      }
+    },
+    {
+      "tag": "🇺🇸 Bronze-美国-onep-02",
+      "type": "trojan",
+      "server": "zz.mgxyt.fogvip-zz.uk",
+      "server_port": 40006,
+      "password": "39f2a2cd-5469-428b-ab9c-6395aebdfe6e",
+      "tls": {
+        "enabled": true,
+        "insecure": false,
+        "server_name": "ld.mgxyt.yuiuingkig.icu"
+      }
+    },
+    {
+      "tag": "🇺🇸 Bronze-美国-Los-03",
+      "type": "trojan",
+      "server": "zz.usa02.fogvip-zz.uk",
+      "server_port": 40044,
+      "password": "39f2a2cd-5469-428b-ab9c-6395aebdfe6e",
+      "tls": {
+        "enabled": true,
+        "insecure": false,
+        "server_name": "ld.meiguo02.yuiuingkig.icu"
+      }
+    },
+    {
+      "tag": "🇭🇰 Silver-香港-HKG-01",
+      "type": "trojan",
+      "server": "zz.hgkneko.viptap-tcb-zz.cc",
+      "server_port": 50111,
+      "password": "39f2a2cd-5469-428b-ab9c-6395aebdfe6e",
+      "tls": {
+        "enabled": true,
+        "insecure": false,
+        "server_name": "ld.hkgneko.yuiuingkig.icu"
+      }
+    },
+    {
+      "tag": "🇭🇰 Silver-香港-HKG-02",
+      "type": "trojan",
+      "server": "zz.hgkneko.viptap-tcb-zz.cc",
+      "server_port": 50112,
+      "password": "39f2a2cd-5469-428b-ab9c-6395aebdfe6e",
+      "tls": {
+        "enabled": true,
+        "insecure": false,
+        "server_name": "ld.hkgneko.yuiuingkig.icu"
+      }
+    },
+    {
+      "tag": "🇭🇰 Silver-香港-BGP-03",
+      "type": "trojan",
+      "server": "zz.2hkmix.fogvip-zz.uk",
+      "server_port": 50306,
+      "password": "39f2a2cd-5469-428b-ab9c-6395aebdfe6e",
+      "tls": {
+        "enabled": true,
+        "insecure": false,
+        "server_name": "ld.2heix.yuiuingkig.icu"
+      }
+    },
+    {
+      "tag": "🇭🇰 Silver-香港-LMT-04",
+      "type": "trojan",
+      "server": "zz.2pkshk.fogvip-zz.uk",
+      "server_port": 50307,
+      "password": "39f2a2cd-5469-428b-ab9c-6395aebdfe6e",
+      "tls": {
+        "enabled": true,
+        "insecure": false,
+        "server_name": "ld.2heix.yuiuingkig.icu"
+      }
+    },
+    {
+      "tag": "🇭🇰 Silver-香港-BGPZ-05",
+      "type": "trojan",
+      "server": "zz.xgbig.viptap-tcb-zz.cc",
+      "server_port": 50070,
+      "password": "39f2a2cd-5469-428b-ab9c-6395aebdfe6e",
+      "tls": {
+        "enabled": true,
+        "insecure": false,
+        "server_name": "ld.xgbig.yuiuingkig.icu"
+      }
+    },
+    {
+      "tag": "🇰🇷 Silver-韩国-商宽-01",
+      "type": "trojan",
+      "server": "zz.hg01.fogvip-zz.uk",
+      "server_port": 40021,
+      "password": "39f2a2cd-5469-428b-ab9c-6395aebdfe6e",
+      "tls": {
+        "enabled": true,
+        "insecure": false,
+        "server_name": "ld.hg01.yuiuingkig.icu"
+      }
+    },
+    {
+      "tag": "🇹🇼 Silver-台湾-商宽-01",
+      "type": "trojan",
+      "server": "zz.tw01.fogvip-zz.uk",
+      "server_port": 40037,
+      "password": "39f2a2cd-5469-428b-ab9c-6395aebdfe6e",
+      "tls": {
+        "enabled": true,
+        "insecure": false,
+        "server_name": "ld.tw01.yuiuingkig.icu"
+      }
+    },
+    {
+      "tag": "🇺🇸 Silver-美国-Host-01",
+      "type": "trojan",
+      "server": "zz.usa01.fogvip-zz.uk",
+      "server_port": 50072,
+      "password": "39f2a2cd-5469-428b-ab9c-6395aebdfe6e",
+      "tls": {
+        "enabled": true,
+        "insecure": false,
+        "server_name": "ld.usa01.yuiuingkig.icu"
+      }
+    },
+    {
+      "tag": "🇺🇸 Silver-美国-BGP-02",
+      "type": "trojan",
+      "server": "zz.usa02.fogvip-zz.uk",
+      "server_port": 40045,
+      "password": "39f2a2cd-5469-428b-ab9c-6395aebdfe6e",
+      "tls": {
+        "enabled": true,
+        "insecure": false,
+        "server_name": "ld.meiguo02.yuiuingkig.icu"
+      }
+    },
+    {
+      "tag": "🇺🇸 Silver-美国-CN2-03",
+      "type": "trojan",
+      "server": "zz.mglsj.fogvip-zz.uk",
+      "server_port": 50108,
+      "password": "39f2a2cd-5469-428b-ab9c-6395aebdfe6e",
+      "tls": {
+        "enabled": true,
+        "insecure": false,
+        "server_name": "ld.mglsj.yuiuingkig.icu"
+      }
+    },
+    {
+      "tag": "🇺🇸 Silver-美国-Vegas-04",
+      "type": "trojan",
+      "server": "zz.ysls.fogvip-zz.uk",
+      "server_port": 50308,
+      "password": "39f2a2cd-5469-428b-ab9c-6395aebdfe6e",
+      "tls": {
+        "enabled": true,
+        "insecure": false,
+        "server_name": "ld.vegas.yuiuingkig.icu"
+      }
+    },
+    {
+      "tag": "🇹🇭 Silver-泰国-商宽-01",
+      "type": "trojan",
+      "server": "zz.tgcloud.fogvip-zz.uk",
+      "server_port": 50055,
+      "password": "39f2a2cd-5469-428b-ab9c-6395aebdfe6e",
+      "tls": {
+        "enabled": true,
+        "insecure": false,
+        "server_name": "ld.tgcloud.yuiuingkig.icu"
+      }
+    },
+    {
+      "tag": "🇲🇾 Silver-马来西亚-01",
+      "type": "trojan",
+      "server": "zz.mlxy-1.fogvip-zz.uk",
+      "server_port": 50117,
+      "password": "39f2a2cd-5469-428b-ab9c-6395aebdfe6e",
+      "tls": {
+        "enabled": true,
+        "insecure": false,
+        "server_name": "ld.mlxy-cn.yuiuingkig.icu"
+      }
+    },
+    {
+      "tag": "🇯🇵 Silver-日本-商宽-01",
+      "type": "trojan",
+      "server": "zz.jp01.fogvip-zz.uk",
+      "server_port": 40015,
+      "password": "39f2a2cd-5469-428b-ab9c-6395aebdfe6e",
+      "tls": {
+        "enabled": true,
+        "insecure": false,
+        "server_name": "ld.jp01.yuiuingkig.icu"
+      }
+    },
+    {
+      "tag": "🇯🇵 Silver-日本-商宽-02",
+      "type": "trojan",
+      "server": "zz.jp03.fogvip-zz.uk",
+      "server_port": 50056,
+      "password": "39f2a2cd-5469-428b-ab9c-6395aebdfe6e",
+      "tls": {
+        "enabled": true,
+        "insecure": false,
+        "server_name": "ld.rbv2.yuiuingkig.icu"
+      }
+    },
+    {
+      "tag": "🇸🇬 Silver-新加坡-01",
+      "type": "trojan",
+      "server": "zz.xinjp02.fogvip-zz.uk",
+      "server_port": 40017,
+      "password": "39f2a2cd-5469-428b-ab9c-6395aebdfe6e",
+      "tls": {
+        "enabled": true,
+        "insecure": false,
+        "server_name": "ld.xinjp01.yuiuingkig.icu"
+      }
+    },
+    {
+      "tag": "🇸🇬 Silver-新加坡-02",
+      "type": "trojan",
+      "server": "zz.sghkg.fogvip-zz.uk",
+      "server_port": 50311,
+      "password": "39f2a2cd-5469-428b-ab9c-6395aebdfe6e",
+      "tls": {
+        "enabled": true,
+        "insecure": false,
+        "server_name": "ld.xjpsghkg.yuiuingkig.icu"
+      }
+    },
+    {
+      "tag": "🇯🇵 Gold-日本-家宽-01",
+      "type": "trojan",
+      "server": "zz.jp03.fogvip-zz.uk",
+      "server_port": 50057,
+      "password": "39f2a2cd-5469-428b-ab9c-6395aebdfe6e",
+      "tls": {
+        "enabled": true,
+        "insecure": false,
+        "server_name": "ld.rbv2.yuiuingkig.icu"
+      }
+    },
+    {
+      "tag": "🇭🇰 Gold-香港-BGP-01",
+      "type": "trojan",
+      "server": "zz.3lihk.fogvip-zz.uk",
+      "server_port": 50302,
+      "password": "39f2a2cd-5469-428b-ab9c-6395aebdfe6e",
+      "tls": {
+        "enabled": true,
+        "insecure": false,
+        "server_name": "ld.3lmet.yuiuingkig.icu"
+      }
+    },
+    {
+      "tag": "🇭🇰 Gold-香港-BGP-02",
+      "type": "trojan",
+      "server": "zz.bgp1.fogvip-zz.uk",
+      "server_port": 50303,
+      "password": "39f2a2cd-5469-428b-ab9c-6395aebdfe6e",
+      "tls": {
+        "enabled": true,
+        "insecure": false,
+        "server_name": "ld.3lmet.yuiuingkig.icu"
+      }
+    },
+    {
+      "tag": "🇭🇰 Gold-香港-BN-03",
+      "type": "trojan",
+      "server": "zz.xghe.fogvip-zz.uk",
+      "server_port": 50059,
+      "password": "39f2a2cd-5469-428b-ab9c-6395aebdfe6e",
+      "tls": {
+        "enabled": true,
+        "insecure": false,
+        "server_name": "ld.xghe.yuiuingkig.icu"
+      }
+    },
+    {
+      "tag": "🇭🇰 Gold-香港-BN-04",
+      "type": "trojan",
+      "server": "zz.xghe.fogvip-zz.uk",
+      "server_port": 50061,
+      "password": "39f2a2cd-5469-428b-ab9c-6395aebdfe6e",
+      "tls": {
+        "enabled": true,
+        "insecure": false,
+        "server_name": "ld.xghe.yuiuingkig.icu"
+      }
+    },
+    {
+      "tag": "🇭🇰 Gold-香港-Pro-05",
+      "type": "trojan",
+      "server": "zz.xgbnxtel.viptap-tcb-zz.cc",
+      "server_port": 50062,
+      "password": "39f2a2cd-5469-428b-ab9c-6395aebdfe6e",
+      "tls": {
+        "enabled": true,
+        "insecure": false,
+        "server_name": "ld.xghe.yuiuingkig.icu"
+      }
+    },
+    {
+      "tag": "🇭🇰 Gold-香港-Pro-06",
+      "type": "trojan",
+      "server": "zz.xgbnxtel.viptap-tcb-zz.cc",
+      "server_port": 50063,
+      "password": "39f2a2cd-5469-428b-ab9c-6395aebdfe6e",
+      "tls": {
+        "enabled": true,
+        "insecure": false,
+        "server_name": "ld.xghe.yuiuingkig.icu"
+      }
+    },
+    {
+      "tag": "🇭🇰 Gold-香港-HEHIK-07",
+      "type": "trojan",
+      "server": "zz.xghik.viptap-tcb-zz.cc",
+      "server_port": 50065,
+      "password": "39f2a2cd-5469-428b-ab9c-6395aebdfe6e",
+      "tls": {
+        "enabled": true,
+        "insecure": false,
+        "server_name": "ld.xghe.yuiuingkig.icu"
+      }
+    },
+    {
+      "tag": "🇭🇰 Gold-香港-HEHIK-08",
+      "type": "trojan",
+      "server": "zz.hikx.viptap-tcb-zz.cc",
+      "server_port": 50066,
+      "password": "39f2a2cd-5469-428b-ab9c-6395aebdfe6e",
+      "tls": {
+        "enabled": true,
+        "insecure": false,
+        "server_name": "ld.xghe.yuiuingkig.icu"
+      }
+    },
+    {
+      "tag": "🇺🇸 Gold-美国-Gost-01",
+      "type": "trojan",
+      "server": "zz.usa01.fogvip-zz.uk",
+      "server_port": 50072,
+      "password": "39f2a2cd-5469-428b-ab9c-6395aebdfe6e",
+      "tls": {
+        "enabled": true,
+        "insecure": false,
+        "server_name": "ld.usa01.yuiuingkig.icu"
+      }
+    },
+    {
+      "tag": "🇺🇸 Gold-美国-Cn2-02",
+      "type": "trojan",
+      "server": "zz.mglsj.fogvip-zz.uk",
+      "server_port": 50108,
+      "password": "39f2a2cd-5469-428b-ab9c-6395aebdfe6e",
+      "tls": {
+        "enabled": true,
+        "insecure": false,
+        "server_name": "ld.mglsj.yuiuingkig.icu"
+      }
+    },
+    {
+      "tag": "🇺🇸 Gold-美国-原生-03",
+      "type": "trojan",
+      "server": "ysus.fogvip-zz.uk",
+      "server_port": 50300,
+      "password": "39f2a2cd-5469-428b-ab9c-6395aebdfe6e",
+      "tls": {
+        "enabled": true,
+        "insecure": false,
+        "server_name": "ld.ysus.yuiuingkig.icu"
+      }
+    },
+    {
+      "tag": "🇺🇸 Gold-美国-原生-04",
+      "type": "trojan",
+      "server": "mgus.fogvip-zz.uk",
+      "server_port": 50301,
+      "password": "39f2a2cd-5469-428b-ab9c-6395aebdfe6e",
+      "tls": {
+        "enabled": true,
+        "insecure": false,
+        "server_name": "ld.ysus.yuiuingkig.icu"
+      }
+    },
+    {
+      "tag": "🇺🇸 Gold-美国-Vegas-05",
+      "type": "trojan",
+      "server": "zz.lswjs.fogvip-zz.uk",
+      "server_port": 50309,
+      "password": "39f2a2cd-5469-428b-ab9c-6395aebdfe6e",
+      "tls": {
+        "enabled": true,
+        "insecure": false,
+        "server_name": "ld.vegas.yuiuingkig.icu"
+      }
+    },
+    {
+      "tag": "🇹🇼 Gold-台湾-Hinet-01",
+      "type": "trojan",
+      "server": "zz.tw01.fogvip-zz.uk",
+      "server_port": 40038,
+      "password": "39f2a2cd-5469-428b-ab9c-6395aebdfe6e",
+      "tls": {
+        "enabled": true,
+        "insecure": false,
+        "server_name": "ld.tw01.yuiuingkig.icu"
+      }
+    },
+    {
+      "tag": "🇸🇬 Gold-新加坡-01",
+      "type": "trojan",
+      "server": "zz.xinjp02.fogvip-zz.uk",
+      "server_port": 40018,
+      "password": "39f2a2cd-5469-428b-ab9c-6395aebdfe6e",
+      "tls": {
+        "enabled": true,
+        "insecure": false,
+        "server_name": "ld.xinjp01.yuiuingkig.icu"
+      }
+    },
+    {
+      "tag": "🇸🇬 Gold-新加坡-02",
+      "type": "trojan",
+      "server": "zz.sg-kg.fogvip-zz.uk",
+      "server_port": 50312,
+      "password": "39f2a2cd-5469-428b-ab9c-6395aebdfe6e",
+      "tls": {
+        "enabled": true,
+        "insecure": false,
+        "server_name": "ld.xjpsghkg.yuiuingkig.icu"
+      }
+    },
+    {
+      "tag": "🇰🇷 Gold-韩国-KR-01",
+      "type": "trojan",
+      "server": "zz.hg01.fogvip-zz.uk",
+      "server_port": 40021,
+      "password": "39f2a2cd-5469-428b-ab9c-6395aebdfe6e",
+      "tls": {
+        "enabled": true,
+        "insecure": false,
+        "server_name": "ld.hg01.yuiuingkig.icu"
+      }
+    },
+    {
+      "tag": "🇮🇳 Gold-印度-Ind-01",
+      "type": "trojan",
+      "server": "zz.yd01.viptap-tcb-zz.cc",
+      "server_port": 40012,
+      "password": "39f2a2cd-5469-428b-ab9c-6395aebdfe6e",
+      "tls": {
+        "enabled": true,
+        "insecure": false,
+        "server_name": "ld.yd01.yuiuingkig.icu"
+      }
+    },
+    {
+      "tag": "🇻🇳 Gold-越南-Vie-01",
+      "type": "trojan",
+      "server": "zz.vieoning.viptap-tcb-zz.cc",
+      "server_port": 50067,
+      "password": "39f2a2cd-5469-428b-ab9c-6395aebdfe6e",
+      "tls": {
+        "enabled": true,
+        "insecure": false,
+        "server_name": "ld.vie.yuiuingkig.icu"
+      }
+    },
+    {
+      "tag": "🇹🇭 Gold-泰国-Tha-01",
+      "type": "trojan",
+      "server": "zz.tgcloud.viptap-tcb-zz.cc",
+      "server_port": 50068,
+      "password": "39f2a2cd-5469-428b-ab9c-6395aebdfe6e",
+      "tls": {
+        "enabled": true,
+        "insecure": false,
+        "server_name": "ld.tgcloud.yuiuingkig.icu"
+      }
+    },
+    {
+      "tag": "🇬🇧 Gold-英国-Gbr-01",
+      "type": "trojan",
+      "server": "zz.ygld.viptap-tcb-zz.cc",
+      "server_port": 50024,
+      "password": "39f2a2cd-5469-428b-ab9c-6395aebdfe6e",
+      "tls": {
+        "enabled": true,
+        "insecure": false,
+        "server_name": "ld.ygld.yuiuingkig.icu"
+      }
+    },
+    {
+      "tag": "🇩🇪 Gold-德国-Ger-01",
+      "type": "trojan",
+      "server": "zz.dg01.viptap-tcb-zz.cc",
+      "server_port": 40053,
+      "password": "39f2a2cd-5469-428b-ab9c-6395aebdfe6e",
+      "tls": {
+        "enabled": true,
+        "insecure": false,
+        "server_name": "ld.dg01.yuiuingkig.icu"
+      }
+    },
+    {
+      "tag": "🇷🇺 Gold-俄罗斯-RUM-01",
+      "type": "trojan",
+      "server": "zz.gyels.viptap-tcb-zz.cc",
+      "server_port": 50042,
+      "password": "39f2a2cd-5469-428b-ab9c-6395aebdfe6e",
+      "tls": {
+        "enabled": true,
+        "insecure": false,
+        "server_name": "ld.gyels.yuiuingkig.icu"
+      }
+    },
+    {
+      "tag": "🇲🇾 Gold-马来西亚-01",
+      "type": "trojan",
+      "server": "zz.mlxy-1.viptap-tcb-zz.cc",
+      "server_port": 50117,
+      "password": "39f2a2cd-5469-428b-ab9c-6395aebdfe6e",
+      "tls": {
+        "enabled": true,
+        "insecure": false,
+        "server_name": "ld.mlxy-cn.yuiuingkig.icu"
+      }
+    },
+    {
+      "tag": "🇨🇦 Gold-加拿大-ProCA",
+      "type": "trojan",
+      "server": "zz.ca.fogvip-zz.uk",
+      "server_port": 50555,
+      "password": "39f2a2cd-5469-428b-ab9c-6395aebdfe6e",
+      "tls": {
+        "enabled": true,
+        "insecure": false,
+        "server_name": "ld.ca.yuiuingkig.icu"
+      }
+    },
+    {
+      "tag": "🇹🇷 Gold-土耳其-Tr-01",
+      "type": "trojan",
+      "server": "zz.tuerqitr.viptap-tcb-zz.cc",
+      "server_port": 50119,
+      "password": "39f2a2cd-5469-428b-ab9c-6395aebdfe6e",
+      "tls": {
+        "enabled": true,
+        "insecure": false,
+        "server_name": "ld.tuerqitr.yuiuingkig.icu"
+      }
     }
   ],
   "route": {
