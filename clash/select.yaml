@@ -2,14 +2,14 @@
 
 ;filter: 
 
-custom_proxy_group=🛩️ NodeSelected`select`[]🇭🇰 Hong Kong`[]🇹🇼 Taiwan`[]🇸🇬 Singapore`[]🇺🇸 America`[]⚡️ Auto`[]DIRECT`.*
+custom_proxy_group=🛩️ NodeSelected`select`[]🇭🇰 Hong Kong`[]🇹🇼 Taiwan`[]🇸🇬 Singapore`[]🇺🇸 America`[]⚡️ Auto`[]DIRECT
 custom_proxy_group=⚡️ Auto`url-test`.*`http://www.gstatic.com/generate_204`30,,50
 custom_proxy_group=👀 ForeignMedia`select`[]🛩️ NodeSelected`[]🇭🇰 Hong Kong`[]🇹🇼 Taiwan`[]🇸🇬 Singapore`[]🇺🇸 America`[]🎯 Foreign`[]✈️ Others
 custom_proxy_group=Ⓜ️ Microsoft`select`DIRECT`[]🛩️ NodeSelected`[]🇭🇰 Hong Kong`[]🇹🇼 Taiwan`[]🇸🇬 Singapore`[]🇺🇸 America`[]🎯 Foreign`[]✈️ Others
 custom_proxy_group=🍏 Apple`select`DIRECT`[]🛩️ NodeSelected`[]🇭🇰 Hong Kong`[]🇹🇼 Taiwan`[]🇸🇬 Singapore`[]🇺🇸 America`[]🎯 Foreign`[]✈️ Others
-custom_proxy_group=🌐 Google`select`[]🛩️ NodeSelected`[]🎯 Foreign`[]⚡️ Auto`.*
-custom_proxy_group=🎯 Foreign`select`[]🛩️ NodeSelected`[]DIRECT`[]⚡️ Auto`.*
-custom_proxy_group=🇨🇳 China`select`[]DIRECT`.*
+custom_proxy_group=🌐 Google`select`[]🛩️ NodeSelected`[]🎯 Foreign`[]⚡️ Auto
+custom_proxy_group=🎯 Foreign`select`[]🛩️ NodeSelected`[]DIRECT`[]⚡️ Auto
+custom_proxy_group=🇨🇳 China`select`[]DIRECT`[]🛩️ NodeSelected`
 custom_proxy_group=🌱 Purification`select`[]REJECT`[]DIRECT
 custom_proxy_group=🤖 AI`select`[]🇺🇸 America`[]🇭🇰 Hong Kong`[]🇹🇼 Taiwan`[]🇸🇬 Singapore`[]✈️ Others
 custom_proxy_group=🇭🇰 Hong Kong`select`.🇭🇰|HK|hk|香港|港|HongKong
@@ -17,7 +17,7 @@ custom_proxy_group=🇹🇼 Taiwan`select`.🇹🇼|TW|tw|台湾|臺灣|台|Taiw
 custom_proxy_group=🇸🇬 Singapore`select`.🇸🇬|SG|sg|新加坡|狮|Singapore
 custom_proxy_group=🇺🇸 America`select`.🇺🇸|US|us|美国|美|United States
 custom_proxy_group=✈️ Others`select`^(?!.*\b(🇭🇰|HK|hk|香港|港|HongKong|🇹🇼|TW|tw|台湾|臺灣|台|Taiwan|🇸🇬|SG|sg|新加坡|狮|Singapore|🇺🇸|US|us|美国|美|United States)\b).*
-custom_proxy_group=😮‍💨 Final`select`[]🛩️ NodeSelected`[]🎯 Foreign`[]⚡️ Auto`.*
+custom_proxy_group=😮‍💨 Final`select`[]🛩️ NodeSelected`[]🎯 Foreign`[]⚡️ Auto
 
 ruleset=DIRECT,no-resolve,https://raw.githubusercontent.com/Xie-Muxi/ProxyConfig/main/rule/no-resolve.list
 ruleset=🤖 AI,https://raw.githubusercontent.com/Xie-Muxi/ProxyConfig/main/rule/AI.list

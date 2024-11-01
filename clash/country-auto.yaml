@@ -2,7 +2,7 @@
 
 ;filter: 
 
-custom_proxy_group=🛩️ NodeSelected`select`[]🇭🇰 Hong Kong`[]🇹🇼 Taiwan`[]🇸🇬 Singapore`[]🇺🇸 America`[]⚡️ Auto`[]DIRECT`.*
+custom_proxy_group=🛩️ NodeSelected`select`[]🇭🇰 Hong Kong`[]🇹🇼 Taiwan`[]🇸🇬 Singapore`[]🇺🇸 America`[]⚡️ Auto`[]DIRECT
 custom_proxy_group=⚡️ Auto`url-test`.*`http://www.gstatic.com/generate_204`30,,50
 custom_proxy_group=👀 ForeignMedia`select`[]🛩️ NodeSelected`[]🇭🇰 Hong Kong`[]🇹🇼 Taiwan`[]🇸🇬 Singapore`[]🇺🇸 America`[]🎯 Foreign`[]✈️ Others
 custom_proxy_group=Ⓜ️ Microsoft`select`DIRECT`[]🛩️ NodeSelected`[]🇭🇰 Hong Kong`[]🇹🇼 Taiwan`[]🇸🇬 Singapore`[]🇺🇸 America`[]🎯 Foreign`[]✈️ Others
