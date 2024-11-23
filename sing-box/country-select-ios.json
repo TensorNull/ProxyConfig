@@ -94,20 +94,32 @@
     {
       "type": "direct",
       "tag": "dns-in",
-      "listen": "127.0.0.1",
+      "listen": "0.0.0.0",
       "listen_port": 53,
       "network": "udp"
     },
     {
       "type": "tun",
-      "inet4_address": "172.19.0.1/30",
-      "inet6_address": "fdfe:dcba:9876::1/126",
+      "address": [
+        "172.19.0.1/30",
+        "fdfe:dcba:9876::1/126"
+      ],
+      "route_address": [
+        "0.0.0.0/1",
+        "128.0.0.0/1",
+        "::/1",
+        "8000::/1"
+      ],
+      "route_exclude_address": [
+        "192.168.0.0/16",
+        "fc00::/7"
+      ],
       "mtu": 1500,
       "auto_route": true,
       "strict_route": false,
       "sniff": true,
       "endpoint_independent_nat": false,
-      "stack": "gvisor",
+      "stack": "system",
       "platform": {
         "http_proxy": {
           "enabled": true,
