@@ -104,12 +104,6 @@
                 "172.19.0.1/30",
                 "fdfe:dcba:9876::1/126"
             ],
-            "route_address": [
-                "0.0.0.0/1",
-                "128.0.0.0/1",
-                "::/1",
-                "8000::/1"
-            ],
             "route_exclude_address": [
                 "192.168.0.0/16",
                 "fc00::/7"
@@ -119,7 +113,7 @@
             "strict_route": false,
             "sniff": true,
             "endpoint_independent_nat": false,
-            "stack": "system",
+            "stack": "mixed",
             "platform": {
                 "http_proxy": {
                     "enabled": true,
