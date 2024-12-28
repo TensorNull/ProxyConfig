@@ -20,7 +20,8 @@ custom_proxy_group=✈️ Others`url-test`^(?!.*\b(🇭🇰|HK|hk|香港|港|Hon
 custom_proxy_group=😮‍💨 Final`select`[]🛩️ NodeSelected`[]🎯 Foreign`[]⚡️ Auto`.*
 
 ruleset=DIRECT,no-resolve,https://raw.githubusercontent.com/Xie-Muxi/ProxyConfig/main/rule/clash/no-resolve.list
-ruleset=🤖 AI,https://raw.githubusercontent.com/Xie-Muxi/ProxyConfig/main/rule/clash/AI.list
+ruleset=🤖 AI,https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/refs/heads/master/Clash/Ruleset/OpenAi.list
+ruleset=🤖 AI,https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/refs/heads/master/Clash/Ruleset/ClaudeAI.list
 ruleset=🎯 Foreign,https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/LocalAreaNetwork.list
 ruleset=🛩️ NodeSelected,https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/UnBan.list
 ruleset=🌱 Purification,https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/BanAD.list
