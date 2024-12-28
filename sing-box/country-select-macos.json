@@ -297,7 +297,7 @@
         {
           "action": "include",
           "keywords": [
-            "(🇭🇰|HK\\d+-HY\\d+|hk\\d+-HY\\d+|香港|港|HongKong)"
+            "🇭🇰|HK[0-9]+-HY[0-9]+|hk[0-9]+-HY[0-9]+|HK|hk|香港|港|HongKong"
           ]
         }
       ]
