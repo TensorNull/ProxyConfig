@@ -19,9 +19,8 @@ custom_proxy_group=🇺🇸 America`url-test`.🇺🇸|US|us|美国|美|United S
 custom_proxy_group=✈️ Others`url-test`^(?!.*\b(🇭🇰|HK|hk|香港|港|HongKong|🇹🇼|TW|tw|台湾|臺灣|台|Taiwan|🇸🇬|SG|sg|新加坡|狮|Singapore|🇺🇸|US|us|美国|美|United States)\b).*`http://www.gstatic.com/generate_204`500,,50
 custom_proxy_group=😮‍💨 Final`select`[]🛩️ NodeSelected`[]🎯 Foreign`[]⚡️ Auto`.*
 
-ruleset=DIRECT,no-resolve,https://raw.githubusercontent.com/Xie-Muxi/ProxyConfig/main/rule/clash/no-resolve.list
-ruleset=🤖 AI,https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/refs/heads/master/Clash/Ruleset/OpenAi.list
-ruleset=🤖 AI,https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/refs/heads/master/Clash/Ruleset/ClaudeAI.list
+ruleset=DIRECT,no-resolve,https://raw.githubusercontent.com/Xie-Muxi/ProxyConfig/main/rule/no-resolve.list
+ruleset=🤖 AI,https://raw.githubusercontent.com/Xie-Muxi/ProxyConfig/main/rule/AI.list
 ruleset=🎯 Foreign,https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/LocalAreaNetwork.list
 ruleset=🛩️ NodeSelected,https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/UnBan.list
 ruleset=🌱 Purification,https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/BanAD.list
