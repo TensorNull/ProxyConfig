@@ -521,7 +521,10 @@
                 "outbound": "🎯 Foreign"
             },
             {
-                "domain_keyword": "edu.cn",
+                "domain_keyword": [
+                    "edu.cn",
+                    "api.worldquantbrain.com"
+                ],
                 "outbound": "direct"
             },
             {
