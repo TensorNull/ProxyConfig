@@ -92,13 +92,6 @@
   },
   "inbounds": [
     {
-      "type": "direct",
-      "tag": "dns-in",
-      "listen": "0.0.0.0",
-      "listen_port": 53,
-      "network": "udp"
-    },
-    {
       "type": "tun",
       "address": [
         "172.19.0.1/30",
@@ -117,7 +110,7 @@
       "platform": {
         "http_proxy": {
           "enabled": true,
-          "server": "127.0.0.1",
+          "server": "0.0.0.0",
           "server_port": 2080
         }
       }
