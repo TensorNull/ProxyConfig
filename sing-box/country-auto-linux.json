@@ -92,13 +92,6 @@
     },
     "inbounds": [
         {
-            "type": "direct",
-            "tag": "dns-in",
-            "listen": "0.0.0.0",
-            "listen_port": 53,
-            "network": "udp"
-        },
-        {
             "type": "tun",
             "address": [
                 "172.19.0.1/30",
@@ -109,8 +102,6 @@
                 "fc00::/7"
             ],
             "mtu": 1500,
-            "auto_route": true,
-            "strict_route": false,
             "sniff": true,
             "endpoint_independent_nat": false,
             "stack": "mixed",

@@ -102,15 +102,13 @@
         "fc00::/7"
       ],
       "mtu": 1500,
-      "auto_route": true,
-      "strict_route": false,
       "sniff": true,
       "endpoint_independent_nat": false,
       "stack": "mixed",
       "platform": {
         "http_proxy": {
           "enabled": true,
-          "server": "0.0.0.0",
+          "server": "127.0.0.1",
           "server_port": 2080
         }
       }
