@@ -523,7 +523,7 @@
             {
                 "domain_keyword": [
                     "edu.cn",
-                    "api.worldquantbrain.com"
+                    "worldquantbrain.com"
                 ],
                 "outbound": "direct"
             },
