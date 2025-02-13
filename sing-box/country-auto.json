@@ -31,10 +31,6 @@
                 "detour": "direct"
             },
             {
-                "tag": "dns_block",
-                "address": "rcode://success"
-            },
-            {
                 "tag": "dns_resolver",
                 "address": "119.29.29.29",
                 "detour": "direct"
@@ -84,20 +80,13 @@
             },
             {
                 "rule_set": "geosite-category-ads-all",
-                "server": "block"
+                "action": "reject"
             }
         ],
         "final": "dns_proxy",
         "strategy": "prefer_ipv4"
     },
     "inbounds": [
-        {
-            "type": "direct",
-            "tag": "dns-in",
-            "listen": "0.0.0.0",
-            "listen_port": 53,
-            "network": "udp"
-        },
         {
             "type": "tun",
             "address": [
@@ -111,7 +100,6 @@
             "mtu": 1500,
             "auto_route": true,
             "strict_route": false,
-            "sniff": true,
             "endpoint_independent_nat": false,
             "stack": "mixed",
             "platform": {
@@ -245,15 +233,6 @@
             "default": "direct"
         },
         {
-            "tag": "🌱 Purification",
-            "type": "selector",
-            "outbounds": [
-                "block",
-                "direct"
-            ],
-            "default": "block"
-        },
-        {
             "tag": "🤖 AI",
             "type": "selector",
             "outbounds": [
@@ -381,10 +360,6 @@
         {
             "type": "dns",
             "tag": "dns-out"
-        },
-        {
-            "type": "block",
-            "tag": "block"
         }
     ],
     "route": {
@@ -392,25 +367,15 @@
         "final": "😮‍💨 Final",
         "rules": [
             {
+                "action": "sniff"
+            },
+            {
+                "protocol": "dns",
+                "action": "hijack-dns"
+            },
+            {
                 "clash_mode": "global",
                 "outbound": "🛩️ NodeSelected"
-            },
-            {
-                "inbound": "dns-in",
-                "outbound": "dns-out"
-            },
-            {
-                "type": "logical",
-                "mode": "or",
-                "rules": [
-                    {
-                        "protocol": "dns"
-                    },
-                    {
-                        "port": 53
-                    }
-                ],
-                "outbound": "dns-out"
             },
             {
                 "type": "logical",
@@ -427,7 +392,7 @@
                         "protocol": "stun"
                     }
                 ],
-                "outbound": "block"
+                "action": "reject"
             },
             {
                 "ip_cidr": [
@@ -440,7 +405,7 @@
             },
             {
                 "rule_set": "geosite-category-ads-all",
-                "outbound": "🌱 Purification"
+                "action": "reject"
             },
             {
                 "domain_keyword": "vercel.app",
