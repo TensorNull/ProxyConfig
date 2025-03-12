@@ -126,8 +126,7 @@
         "🇭🇰 Hong Kong",
         "🇹🇼 Taiwan",
         "🇸🇬 Singapore",
-        "🇺🇸 America",
-        "✈️ Others"
+        "🇺🇸 America"
       ],
       "default": "🇭🇰 Hong Kong",
       "filter": [
@@ -146,14 +145,12 @@
       "interval": "1m",
       "tolerance": 50,
       "outbounds": [
-        "direct",
         "🇭🇰 Hong Kong",
         "🇹🇼 Taiwan",
         "🇸🇬 Singapore",
         "🇺🇸 America",
-        "✈️ Others"
-      ],
-      "default": "🇭🇰 Hong Kong"
+        "direct"
+      ]
     },
     {
       "tag": "👀 ForeignMedia",
@@ -163,8 +160,7 @@
         "🇭🇰 Hong Kong",
         "🇹🇼 Taiwan",
         "🇸🇬 Singapore",
-        "🇺🇸 America",
-        "✈️ Others"
+        "🇺🇸 America"
       ],
       "default": "🇭🇰 Hong Kong"
     },
@@ -176,8 +172,7 @@
         "🇭🇰 Hong Kong",
         "🇹🇼 Taiwan",
         "🇸🇬 Singapore",
-        "🇺🇸 America",
-        "✈️ Others"
+        "🇺🇸 America"
       ],
       "default": "direct"
     },
@@ -189,8 +184,7 @@
         "🇭🇰 Hong Kong",
         "🇹🇼 Taiwan",
         "🇸🇬 Singapore",
-        "🇺🇸 America",
-        "✈️ Others"
+        "🇺🇸 America"
       ],
       "default": "🇭🇰 Hong Kong"
     },
@@ -202,8 +196,7 @@
         "🇭🇰 Hong Kong",
         "🇹🇼 Taiwan",
         "🇸🇬 Singapore",
-        "🇺🇸 America",
-        "✈️ Others"
+        "🇺🇸 America"
       ],
       "default": "🇭🇰 Hong Kong"
     },
@@ -215,8 +208,7 @@
         "🇭🇰 Hong Kong",
         "🇹🇼 Taiwan",
         "🇸🇬 Singapore",
-        "🇺🇸 America",
-        "✈️ Others"
+        "🇺🇸 America"
       ],
       "default": "🇭🇰 Hong Kong"
     },
@@ -237,8 +229,7 @@
         "🇭🇰 Hong Kong",
         "🇹🇼 Taiwan",
         "🇸🇬 Singapore",
-        "🇺🇸 America",
-        "✈️ Others"
+        "🇺🇸 America"
       ],
       "default": "🇺🇸 America"
     },
@@ -319,21 +310,6 @@
           "action": "include",
           "keywords": [
             "🇺🇸|US|us|美国|美|United States"
-          ]
-        }
-      ]
-    },
-    {
-      "tag": "✈️ Others",
-      "type": "selector",
-      "outbounds": [
-        "{all}"
-      ],
-      "filter": [
-        {
-          "action": "exclude",
-          "keywords": [
-            "🇭🇰|HK|hk|香港|香|🇹🇼|TW|tw|台湾|台|🇸🇬|SG|sg|新加坡|狮|🇺🇸|US|us|美国|美|网站|地址|剩余|过期|时间|有效|域名|套餐|到期|官网"
           ]
         }
       ]
