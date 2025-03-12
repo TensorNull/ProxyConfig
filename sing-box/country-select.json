@@ -121,13 +121,14 @@
       "tag": "🛩️ NodeSelected",
       "type": "selector",
       "outbounds": [
-        "🇭🇰 Hong Kong",
         "⚡️ Auto",
+        "🇭🇰 Hong Kong",
         "direct",
         "🇹🇼 Taiwan",
         "🇸🇬 Singapore",
         "🇺🇸 America"
       ],
+      "default": "🇭🇰 Hong Kong",
       "filter": [
         {
           "action": "exclude",
