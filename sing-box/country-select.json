@@ -146,16 +146,14 @@
       "interval": "1m",
       "tolerance": 50,
       "outbounds": [
-        "{all}"
+        "direct",
+        "🇭🇰 Hong Kong",
+        "🇹🇼 Taiwan",
+        "🇸🇬 Singapore",
+        "🇺🇸 America",
+        "✈️ Others"
       ],
-      "filter": [
-        {
-          "action": "exclude",
-          "keywords": [
-            "网站|地址|剩余|过期|时间|有效|域名|套餐|到期|官网"
-          ]
-        }
-      ]
+      "default": "🇭🇰 Hong Kong"
     },
     {
       "tag": "👀 ForeignMedia",
