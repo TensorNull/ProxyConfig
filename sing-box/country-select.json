@@ -547,7 +547,7 @@
       {
         "tag": "geosite-binance",
         "type": "remote",
-        "format": "source",
+        "format": "binary",
         "url": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geosite/binance.srs",
         "download_detour": "⚡️ Auto"
       },
