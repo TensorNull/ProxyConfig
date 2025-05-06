@@ -552,13 +552,6 @@
         "download_detour": "⚡️ Auto"
       },
       {
-        "tag": "google-gemini",
-        "type": "remote",
-        "format": "source",
-        "url": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat@sing/geo/geosite/google-gemini.json",
-        "download_detour": "⚡️ Auto"
-      },
-      {
         "tag": "geosite-youtube",
         "type": "remote",
         "format": "source",
