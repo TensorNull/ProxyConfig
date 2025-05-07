@@ -396,7 +396,8 @@
             },
             {
                 "rule_set": [
-                    "geosite-openai"
+                    "geosite-openai",
+                    "google-gemini"
                 ],
                 "outbound": "🤖 AI"
             },
