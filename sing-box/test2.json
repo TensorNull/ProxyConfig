@@ -1,6 +1,7 @@
 {
     "log": {
-        "level": "info",
+        "disabled": false,
+        "level": "error",
         "timestamp": true
     },
     "experimental": {
@@ -391,9 +392,7 @@
             {
                 "rule_set": [
                     "geosite-github",
-                    "geoip-twitter",
                     "geosite-twitter",
-                    "geoip-facebook",
                     "geosite-facebook",
                     "geosite-twitter",
                     "geosite-instagram",
@@ -404,8 +403,7 @@
             },
             {
                 "rule_set": [
-                    "geosite-google",
-                    "geoip-google"
+                    "geosite-google"
                 ],
                 "outbound": "🌐 Google"
             },
@@ -432,7 +430,6 @@
                     "geosite-youtube",
                     "geosite-tiktok",
                     "geosite-netflix",
-                    "geoip-netflix",
                     "geosite-hbo",
                     "geosite-disney",
                     "geosite-primevideo"
@@ -459,8 +456,7 @@
             },
             {
                 "rule_set": [
-                    "geosite-cn",
-                    "geoip-cn"
+                    "geosite-cn"
                 ],
                 "outbound": "🇨🇳 China"
             },
@@ -478,62 +474,6 @@
             }
         ],
         "rule_set": [
-            {
-                "tag": "geoip-google",
-                "type": "remote",
-                "format": "binary",
-                "url": "https://fastly.jsdelivr.net/gh/SagerNet/sing-geosite@rule-set/geosite-google.srs",
-                "download_detour": "direct"
-            },
-            {
-                "tag": "geoip-telegram",
-                "type": "remote",
-                "format": "binary",
-                "url": "https://fastly.jsdelivr.net/gh/SagerNet/sing-geosite@rule-set/geosite-telegram.srs",
-                "download_detour": "direct"
-            },
-            {
-                "tag": "geoip-twitter",
-                "type": "remote",
-                "format": "binary",
-                "url": "https://fastly.jsdelivr.net/gh/SagerNet/sing-geosite@rule-set/geosite-twitter.srs",
-                "download_detour": "direct"
-            },
-            {
-                "tag": "geoip-facebook",
-                "type": "remote",
-                "format": "binary",
-                "url": "https://fastly.jsdelivr.net/gh/SagerNet/sing-geosite@rule-set/geosite-facebook.srs",
-                "download_detour": "direct"
-            },
-            {
-                "tag": "geoip-netflix",
-                "type": "remote",
-                "format": "binary",
-                "url": "https://fastly.jsdelivr.net/gh/SagerNet/sing-geosite@rule-set/geosite-netflix.srs",
-                "download_detour": "direct"
-            },
-            {
-                "tag": "geoip-apple",
-                "type": "remote",
-                "format": "binary",
-                "url": "https://fastly.jsdelivr.net/gh/SagerNet/sing-geosite@rule-set/geosite-apple.srs",
-                "download_detour": "direct"
-            },
-            {
-                "tag": "geoip-bilibili",
-                "type": "remote",
-                "format": "binary",
-                "url": "https://fastly.jsdelivr.net/gh/SagerNet/sing-geosite@rule-set/geosite-bilibili.srs",
-                "download_detour": "direct"
-            },
-            {
-                "tag": "geoip-cn",
-                "type": "remote",
-                "format": "binary",
-                "url": "https://fastly.jsdelivr.net/gh/SagerNet/sing-geosite@rule-set/geosite-cn.srs",
-                "download_detour": "direct"
-            },
             {
                 "tag": "geosite-private",
                 "type": "remote",
