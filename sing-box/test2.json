@@ -374,18 +374,9 @@
                 "outbound": "🛩️ NodeSelected"
             },
             {
-                "domain": [
-                    "clash.razord.top",
-                    "yacd.metacubex.one",
-                    "yacd.haishan.me",
-                    "d.metacubex.one"
-                ],
-                "outbound": "direct"
-            },
-            {
                 "rule_set": [
                     "geosite-openai",
-                    "google-gemini"
+                    "geosite-google-gemini"
                 ],
                 "outbound": "🤖 AI"
             },
@@ -503,7 +494,7 @@
                 "download_detour": "direct"
             },
             {
-                "tag": "google-gemini",
+                "tag": "geosite-google-gemini",
                 "type": "remote",
                 "format": "binary",
                 "url": "https://fastly.jsdelivr.net/gh/SagerNet/sing-geosite@rule-set/geosite-google-gemini.srs",
