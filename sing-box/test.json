@@ -477,6 +477,13 @@
                 "download_detour": "direct"
             },
             {
+                "tag": "geoip-google",
+                "type": "remote",
+                "format": "binary",
+                "url": "https://fastly.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@sing/geo/geoip/google.srs",
+                "download_detour": "direct"
+            },
+            {
                 "tag": "geosite-openai",
                 "type": "remote",
                 "format": "binary",
@@ -572,13 +579,6 @@
                 "type": "remote",
                 "format": "binary",
                 "url": "https://fastly.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@sing/geo/geosite/netflix.srs",
-                "download_detour": "direct"
-            },
-            {
-                "tag": "geosite-disney",
-                "type": "remote",
-                "format": "binary",
-                "url": "https://fastly.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@sing/geo/geosite/disney.srs",
                 "download_detour": "direct"
             },
             {
