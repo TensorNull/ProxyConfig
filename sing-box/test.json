@@ -420,10 +420,7 @@
                 "rule_set": [
                     "geosite-youtube",
                     "geosite-tiktok",
-                    "geosite-netflix",
-                    "geosite-hbo",
-                    "geosite-disney",
-                    "geosite-primevideo"
+                    "geosite-netflix"
                 ],
                 "outbound": "👀 ForeignMedia"
             },
@@ -521,6 +518,13 @@
                 "download_detour": "direct"
             },
             {
+                "tag": "geoip-telegram",
+                "type": "remote",
+                "format": "source",
+                "url": "https://fastly.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@sing/geo/geoip/telegram.json",
+                "download_detour": "direct"
+            },
+            {
                 "tag": "geosite-twitter",
                 "type": "remote",
                 "format": "source",
@@ -546,13 +550,6 @@
                 "type": "remote",
                 "format": "source",
                 "url": "https://fastly.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@sing/geo/geosite/bilibili.json",
-                "download_detour": "direct"
-            },
-            {
-                "tag": "geosite-bahamut",
-                "type": "remote",
-                "format": "source",
-                "url": "https://fastly.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@sing/geo/geosite/bahamut.json",
                 "download_detour": "direct"
             },
             {
@@ -609,20 +606,6 @@
                 "type": "remote",
                 "format": "source",
                 "url": "https://fastly.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@sing/geo/geosite/category-games.json",
-                "download_detour": "direct"
-            },
-            {
-                "tag": "geosite-hbo",
-                "type": "remote",
-                "format": "source",
-                "url": "https://fastly.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@sing/geo/geosite/hbo.json",
-                "download_detour": "direct"
-            },
-            {
-                "tag": "geosite-primevideo",
-                "type": "remote",
-                "format": "source",
-                "url": "https://fastly.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@sing/geo/geosite/primevideo.json",
                 "download_detour": "direct"
             },
             {
