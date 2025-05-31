@@ -395,7 +395,8 @@
             },
             {
                 "rule_set": [
-                    "geosite-google"
+                    "geosite-google",
+                    "geoip-google"
                 ],
                 "outbound": "🌐 Google"
             },
