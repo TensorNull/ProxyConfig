@@ -385,6 +385,7 @@
                     "geosite-twitter",
                     "geosite-facebook",
                     "geosite-telegram",
+                    "geoip-telegram",
                     "geosite-instagram",
                     "geosite-amazon",
                     "geosite-category-games",
