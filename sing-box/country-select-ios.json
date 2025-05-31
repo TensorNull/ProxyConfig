@@ -385,10 +385,11 @@
           "geosite-github",
           "geosite-twitter",
           "geosite-facebook",
-          "geosite-twitter",
+          "geosite-telegram",
           "geosite-instagram",
           "geosite-amazon",
-          "geosite-category-games"
+          "geosite-category-games",
+          "geosite-binance"
         ],
         "outbound": "🛩️ NodeSelected"
       },
@@ -429,8 +430,7 @@
       },
       {
         "rule_set": [
-          "geosite-geolocation-!cn",
-          "geosite-binance"
+          "geosite-geolocation-!cn"
         ],
         "outbound": "🎯 Foreign"
       },
