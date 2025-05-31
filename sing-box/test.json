@@ -464,169 +464,169 @@
             {
                 "tag": "geosite-private",
                 "type": "remote",
-                "format": "source",
-                "url": "https://fastly.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@sing/geo/geosite/private.json",
+                "format": "binary",
+                "url": "https://fastly.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@sing/geo/geosite/private.srs",
                 "download_detour": "direct"
             },
             {
                 "tag": "geosite-google",
                 "type": "remote",
-                "format": "source",
-                "url": "https://fastly.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@sing/geo/geosite/google.json",
+                "format": "binary",
+                "url": "https://fastly.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@sing/geo/geosite/google.srs",
                 "download_detour": "direct"
             },
             {
                 "tag": "geosite-openai",
                 "type": "remote",
-                "format": "source",
-                "url": "https://fastly.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@sing/geo/geosite/openai.json",
+                "format": "binary",
+                "url": "https://fastly.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@sing/geo/geosite/openai.srs",
                 "download_detour": "direct"
             },
             {
                 "tag": "geosite-binance",
                 "type": "remote",
-                "format": "source",
-                "url": "https://fastly.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@sing/geo/geosite/binance.json",
+                "format": "binary",
+                "url": "https://fastly.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@sing/geo/geosite/binance.srs",
                 "download_detour": "direct"
             },
             {
                 "tag": "geosite-google-gemini",
                 "type": "remote",
-                "format": "source",
-                "url": "https://fastly.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@sing/geo/geosite/google-gemini.json",
+                "format": "binary",
+                "url": "https://fastly.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@sing/geo/geosite/google-gemini.srs",
                 "download_detour": "direct"
             },
             {
                 "tag": "geosite-youtube",
                 "type": "remote",
-                "format": "source",
-                "url": "https://fastly.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@sing/geo/geosite/youtube.json",
+                "format": "binary",
+                "url": "https://fastly.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@sing/geo/geosite/youtube.srs",
                 "download_detour": "direct"
             },
             {
                 "tag": "geosite-github",
                 "type": "remote",
-                "format": "source",
-                "url": "https://fastly.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@sing/geo/geosite/github.json",
+                "format": "binary",
+                "url": "https://fastly.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@sing/geo/geosite/github.srs",
                 "download_detour": "direct"
             },
             {
                 "tag": "geosite-telegram",
                 "type": "remote",
-                "format": "source",
-                "url": "https://fastly.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@sing/geo/geosite/telegram.json",
+                "format": "binary",
+                "url": "https://fastly.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@sing/geo/geosite/telegram.srs",
                 "download_detour": "direct"
             },
             {
                 "tag": "geoip-telegram",
                 "type": "remote",
-                "format": "source",
-                "url": "https://fastly.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@sing/geo/geoip/telegram.json",
+                "format": "binary",
+                "url": "https://fastly.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@sing/geo/geoip/telegram.srs",
                 "download_detour": "direct"
             },
             {
                 "tag": "geosite-twitter",
                 "type": "remote",
-                "format": "source",
-                "url": "https://fastly.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@sing/geo/geosite/twitter.json",
+                "format": "binary",
+                "url": "https://fastly.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@sing/geo/geosite/twitter.srs",
                 "download_detour": "direct"
             },
             {
                 "tag": "geosite-facebook",
                 "type": "remote",
-                "format": "source",
-                "url": "https://fastly.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@sing/geo/geosite/facebook.json",
+                "format": "binary",
+                "url": "https://fastly.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@sing/geo/geosite/facebook.srs",
                 "download_detour": "direct"
             },
             {
                 "tag": "geosite-instagram",
                 "type": "remote",
-                "format": "source",
-                "url": "https://fastly.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@sing/geo/geosite/instagram.json",
+                "format": "binary",
+                "url": "https://fastly.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@sing/geo/geosite/instagram.srs",
                 "download_detour": "direct"
             },
             {
                 "tag": "geosite-bilibili",
                 "type": "remote",
-                "format": "source",
-                "url": "https://fastly.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@sing/geo/geosite/bilibili.json",
+                "format": "binary",
+                "url": "https://fastly.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@sing/geo/geosite/bilibili.srs",
                 "download_detour": "direct"
             },
             {
                 "tag": "geosite-spotify",
                 "type": "remote",
-                "format": "source",
-                "url": "https://fastly.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@sing/geo/geosite/spotify.json",
+                "format": "binary",
+                "url": "https://fastly.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@sing/geo/geosite/spotify.srs",
                 "download_detour": "direct"
             },
             {
                 "tag": "geosite-tiktok",
                 "type": "remote",
-                "format": "source",
-                "url": "https://fastly.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@sing/geo/geosite/tiktok.json",
+                "format": "binary",
+                "url": "https://fastly.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@sing/geo/geosite/tiktok.srs",
                 "download_detour": "direct"
             },
             {
                 "tag": "geosite-netflix",
                 "type": "remote",
-                "format": "source",
-                "url": "https://fastly.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@sing/geo/geosite/netflix.json",
+                "format": "binary",
+                "url": "https://fastly.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@sing/geo/geosite/netflix.srs",
                 "download_detour": "direct"
             },
             {
                 "tag": "geosite-disney",
                 "type": "remote",
-                "format": "source",
-                "url": "https://fastly.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@sing/geo/geosite/disney.json",
+                "format": "binary",
+                "url": "https://fastly.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@sing/geo/geosite/disney.srs",
                 "download_detour": "direct"
             },
             {
                 "tag": "geosite-apple",
                 "type": "remote",
-                "format": "source",
-                "url": "https://fastly.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@sing/geo/geosite/apple.json",
+                "format": "binary",
+                "url": "https://fastly.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@sing/geo/geosite/apple.srs",
                 "download_detour": "direct"
             },
             {
                 "tag": "geosite-amazon",
                 "type": "remote",
-                "format": "source",
-                "url": "https://fastly.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@sing/geo/geosite/amazon.json",
+                "format": "binary",
+                "url": "https://fastly.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@sing/geo/geosite/amazon.srs",
                 "download_detour": "direct"
             },
             {
                 "tag": "geosite-microsoft",
                 "type": "remote",
-                "format": "source",
-                "url": "https://fastly.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@sing/geo/geosite/microsoft.json",
+                "format": "binary",
+                "url": "https://fastly.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@sing/geo/geosite/microsoft.srs",
                 "download_detour": "direct"
             },
             {
                 "tag": "geosite-category-games",
                 "type": "remote",
-                "format": "source",
-                "url": "https://fastly.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@sing/geo/geosite/category-games.json",
+                "format": "binary",
+                "url": "https://fastly.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@sing/geo/geosite/category-games.srs",
                 "download_detour": "direct"
             },
             {
                 "tag": "geosite-cn",
                 "type": "remote",
-                "format": "source",
-                "url": "https://fastly.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@sing/geo/geosite/cn.json",
+                "format": "binary",
+                "url": "https://fastly.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@sing/geo/geosite/cn.srs",
                 "download_detour": "direct"
             },
             {
                 "tag": "geosite-geolocation-!cn",
                 "type": "remote",
-                "format": "source",
-                "url": "https://fastly.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@sing/geo/geosite/geolocation-!cn.json",
+                "format": "binary",
+                "url": "https://fastly.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@sing/geo/geosite/geolocation-!cn.srs",
                 "download_detour": "direct"
             },
             {
                 "tag": "geosite-category-ads-all",
                 "type": "remote",
-                "format": "source",
-                "url": "https://fastly.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@sing/geo/geosite/category-ads-all.json",
+                "format": "binary",
+                "url": "https://fastly.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@sing/geo/geosite/category-ads-all.srs",
                 "download_detour": "direct"
             }
         ]
