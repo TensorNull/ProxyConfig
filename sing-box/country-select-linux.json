@@ -445,7 +445,8 @@
       },
       {
         "rule_set": [
-          "geosite-cn"
+          "geosite-cn",
+          "geosite-feishu"
         ],
         "outbound": "🇨🇳 China"
       },
@@ -629,6 +630,13 @@
         "type": "remote",
         "format": "binary",
         "url": "https://fastly.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@sing/geo/geosite/category-ads-all.srs",
+        "download_detour": "direct"
+      },
+      {
+        "tag": "geosite-feishu",
+        "type": "remote",
+        "format": "binary",
+        "url": "https://fastly.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@sing/geo/geosite/feishu.srs",
         "download_detour": "direct"
       }
     ]
