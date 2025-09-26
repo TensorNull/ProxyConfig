@@ -383,6 +383,7 @@
             {
                 "rule_set": [
                     "geosite-openai",
+                    "geosite-anthropic",
                     "geosite-google-gemini"
                 ],
                 "outbound": "🤖 AI"
@@ -498,6 +499,13 @@
                 "type": "remote",
                 "format": "binary",
                 "url": "https://fastly.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@sing/geo/geosite/openai.srs",
+                "download_detour": "direct"
+            },
+            {
+                "tag": "geosite-anthropic.srs",
+                "type": "remote",
+                "format": "binary",
+                "url": "https://fastly.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@sing/geo/geosite/anthropic.srs",
                 "download_detour": "direct"
             },
             {
