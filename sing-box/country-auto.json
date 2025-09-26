@@ -503,7 +503,7 @@
                 "download_detour": "direct"
             },
             {
-                "tag": "geosite-anthropic.srs",
+                "tag": "geosite-anthropic",
                 "type": "remote",
                 "format": "binary",
                 "url": "https://fastly.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@sing/geo/geosite/anthropic.srs",
