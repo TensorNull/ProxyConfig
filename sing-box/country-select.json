@@ -444,6 +444,7 @@
       {
         "rule_set": [
           "geosite-cn",
+          "geoip-cn",
           "geosite-feishu"
         ],
         "outbound": "🇨🇳 China"
@@ -614,6 +615,13 @@
         "type": "remote",
         "format": "binary",
         "url": "https://fastly.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@sing/geo/geosite/category-games.srs",
+        "download_detour": "direct"
+      },
+      {
+        "tag": "geoip-cn",
+        "type": "remote",
+        "format": "binary",
+        "url": "https://fastly.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@sing/geo/geoip/cn.srs",
         "download_detour": "direct"
       },
       {
