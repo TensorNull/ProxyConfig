@@ -365,6 +365,12 @@
         "outbound": "direct"
       },
       {
+        "ip_cidr": [
+          "43.162.0.0/16"
+        ],
+        "outbound": "🇺🇸 America"
+      },
+      {
         "rule_set": "geosite-category-ads-all",
         "action": "reject"
       },
