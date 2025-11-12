@@ -24,6 +24,7 @@
         "type": "https",
         "server": "8.8.8.8",
         "server_port": 443,
+        "server_name": "dns.google",
         "detour": "🛩️ NodeSelected"
       },
       {
@@ -31,6 +32,7 @@
         "type": "https",
         "server": "sm2.doh.pub",
         "server_port": 443,
+        "server_name": "sm2.doh.pub",
         "address_resolver": "dns_resolver",
         "detour": "direct"
       },
@@ -84,8 +86,7 @@
         "action": "reject"
       }
     ],
-    "final": "dns_proxy",
-    "strategy": "prefer_ipv4"
+    "final": "dns_proxy"
   },
   "inbounds": [
     {
