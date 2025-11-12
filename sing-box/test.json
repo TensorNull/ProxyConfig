@@ -21,18 +21,24 @@
         "servers": [
             {
                 "tag": "dns_proxy",
-                "address": "https://8.8.8.8/dns-query",
+                "type": "https",
+                "server": "8.8.8.8",
+                "server_port": 443,
                 "detour": "🛩️ NodeSelected"
             },
             {
                 "tag": "dns_direct",
-                "address": "https://sm2.doh.pub/dns-query",
+                "type": "https",
+                "server": "sm2.doh.pub",
+                "server_port": 443,
                 "address_resolver": "dns_resolver",
                 "detour": "direct"
             },
             {
                 "tag": "dns_resolver",
-                "address": "119.29.29.29",
+                "type": "udp",
+                "server": "119.29.29.29",
+                "server_port": 53,
                 "detour": "direct"
             }
         ],

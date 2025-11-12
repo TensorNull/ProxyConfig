@@ -21,18 +21,24 @@
     "servers": [
       {
         "tag": "dns_proxy",
-        "address": "https://8.8.8.8/dns-query",
+        "type": "https",
+        "server": "8.8.8.8",
+        "server_port": 443,
         "detour": "🛩️ NodeSelected"
       },
       {
         "tag": "dns_direct",
-        "address": "https://sm2.doh.pub/dns-query",
+        "type": "https",
+        "server": "sm2.doh.pub",
+        "server_port": 443,
         "address_resolver": "dns_resolver",
         "detour": "direct"
       },
       {
         "tag": "dns_resolver",
-        "address": "119.29.29.29",
+        "type": "udp",
+        "server": "119.29.29.29",
+        "server_port": 53,
         "detour": "direct"
       }
     ],
@@ -44,11 +50,6 @@
           "testingcf.jsdelivr.net"
         ],
         "server": "dns_resolver"
-      },
-      {
-        "outbound": "any",
-        "server": "dns_resolver",
-        "disable_cache": true
       },
       {
         "rule_set": "geosite-cn",
@@ -326,6 +327,10 @@
   "route": {
     "auto_detect_interface": true,
     "final": "😮‍💨 Final",
+    "default_domain_resolver": {
+      "server": "dns_resolver",
+      "strategy": "prefer_ipv4"
+    },
     "rules": [
       {
         "action": "sniff"
