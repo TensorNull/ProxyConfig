@@ -24,10 +24,6 @@
         "type": "https",
         "server": "8.8.8.8",
         "server_port": 443,
-        "tls": {
-          "enabled": true,
-          "server_name": "dns.google"
-        },
         "detour": "🛩️ NodeSelected"
       },
       {
@@ -35,15 +31,13 @@
         "type": "https",
         "server": "sm2.doh.pub",
         "server_port": 443,
-        "address_resolver": "dns_resolver",
-        "detour": "direct"
+        "domain_resolver": "dns_resolver"
       },
       {
         "tag": "dns_resolver",
         "type": "udp",
         "server": "119.29.29.29",
-        "server_port": 53,
-        "detour": "direct"
+        "server_port": 53
       }
     ],
     "rules": [
@@ -105,7 +99,7 @@
       "auto_route": true,
       "strict_route": false,
       "endpoint_independent_nat": false,
-      "stack": "mixed",
+      "stack": "system",
       "platform": {
         "http_proxy": {
           "enabled": true,
@@ -125,32 +119,13 @@
       "tag": "🛩️ NodeSelected",
       "type": "selector",
       "outbounds": [
-        "⚡️ Auto",
-        "direct",
         "🇭🇰 Hong Kong",
+        "direct",
         "🇹🇼 Taiwan",
         "🇸🇬 Singapore",
         "🇺🇸 America"
       ],
       "default": "🇭🇰 Hong Kong",
-      "filter": [
-        {
-          "action": "exclude",
-          "keywords": [
-            "网站|地址|剩余|过期|时间|有效|域名|套餐|到期|官网"
-          ]
-        }
-      ]
-    },
-    {
-      "tag": "⚡️ Auto",
-      "type": "urltest",
-      "url": "http://www.gstatic.com/generate_204",
-      "interval": "1m",
-      "tolerance": 50,
-      "outbounds": [
-        "{all}"
-      ],
       "filter": [
         {
           "action": "exclude",
@@ -246,7 +221,6 @@
       "type": "selector",
       "outbounds": [
         "direct",
-        "⚡️ Auto",
         "🇭🇰 Hong Kong",
         "🇸🇬 Singapore",
         "🇹🇼 Taiwan",

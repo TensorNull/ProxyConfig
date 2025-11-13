@@ -21,19 +21,23 @@
         "servers": [
             {
                 "tag": "dns_proxy",
-                "address": "https://8.8.8.8/dns-query",
+                "type": "https",
+                "server": "8.8.8.8",
+                "server_port": 443,
                 "detour": "🛩️ NodeSelected"
             },
             {
                 "tag": "dns_direct",
-                "address": "https://sm2.doh.pub/dns-query",
-                "address_resolver": "dns_resolver",
-                "detour": "direct"
+                "type": "https",
+                "server": "sm2.doh.pub",
+                "server_port": 443,
+                "domain_resolver": "dns_resolver"
             },
             {
                 "tag": "dns_resolver",
-                "address": "119.29.29.29",
-                "detour": "direct"
+                "type": "udp",
+                "server": "119.29.29.29",
+                "server_port": 53
             }
         ],
         "rules": [
@@ -44,11 +48,6 @@
                     "testingcf.jsdelivr.net"
                 ],
                 "server": "dns_resolver"
-            },
-            {
-                "outbound": "any",
-                "server": "dns_resolver",
-                "disable_cache": true
             },
             {
                 "rule_set": "geosite-cn",
@@ -83,8 +82,7 @@
                 "action": "reject"
             }
         ],
-        "final": "dns_proxy",
-        "strategy": "prefer_ipv4"
+        "final": "dns_proxy"
     },
     "inbounds": [
         {
@@ -101,7 +99,7 @@
             "auto_route": true,
             "strict_route": false,
             "endpoint_independent_nat": false,
-            "stack": "mixed",
+            "stack": "system",
             "platform": {
                 "http_proxy": {
                     "enabled": true,
@@ -122,8 +120,8 @@
             "type": "selector",
             "outbounds": [
                 "⚡️ Auto",
-                "direct",
                 "🇭🇰 Hong Kong",
+                "direct",
                 "🇹🇼 Taiwan",
                 "🇸🇬 Singapore",
                 "🇺🇸 America"
@@ -334,6 +332,10 @@
     "route": {
         "auto_detect_interface": true,
         "final": "😮‍💨 Final",
+        "default_domain_resolver": {
+            "server": "dns_resolver",
+            "strategy": "prefer_ipv4"
+        },
         "rules": [
             {
                 "action": "sniff"

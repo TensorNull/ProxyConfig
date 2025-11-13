@@ -99,7 +99,7 @@
       "auto_route": true,
       "strict_route": false,
       "endpoint_independent_nat": false,
-      "stack": "mixed",
+      "stack": "system",
       "platform": {
         "http_proxy": {
           "enabled": true,
@@ -119,7 +119,6 @@
       "tag": "🛩️ NodeSelected",
       "type": "selector",
       "outbounds": [
-        "⚡️ Auto",
         "🇭🇰 Hong Kong",
         "direct",
         "🇹🇼 Taiwan",
@@ -134,20 +133,6 @@
             "网站|地址|剩余|过期|时间|有效|域名|套餐|到期|官网"
           ]
         }
-      ]
-    },
-    {
-      "tag": "⚡️ Auto",
-      "type": "urltest",
-      "url": "http://www.gstatic.com/generate_204",
-      "interval": "1m",
-      "tolerance": 50,
-      "outbounds": [
-        "🇭🇰 Hong Kong",
-        "🇹🇼 Taiwan",
-        "🇸🇬 Singapore",
-        "🇺🇸 America",
-        "direct"
       ]
     },
     {
@@ -236,7 +221,6 @@
       "type": "selector",
       "outbounds": [
         "direct",
-        "⚡️ Auto",
         "🇭🇰 Hong Kong",
         "🇸🇬 Singapore",
         "🇹🇼 Taiwan",
